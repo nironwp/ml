@@ -1,0 +1,5 @@
+<% for (let i = 1; i <= 4; i++) { %>
+    <div onclick='alterarQuantidadeDoProdutoNoCarrinho("<%= i %>", "<%= productId %>");' style='flex-grow:1;text-align:center;border-bottom:solid 1px #d8d8d8;padding:16.5px 0;'>
+        <span style='font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'><%= i %> unidade(s)</span>
+    </div>
+<% } %>

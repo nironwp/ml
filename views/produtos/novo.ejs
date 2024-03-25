@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Novo Produto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        fieldset {
+            border: none;
+            margin: 0;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="url"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Adicionar Produto</h1>
+    <form action="/produtos" method="POST">
+        <fieldset>
+            <legend>Informações Básicas do Produto</legend>
+            <label for="nome_produto">Nome do Produto:</label>
+            <input type="text" id="nome_produto" name="nome_produto" required>
+
+            <label for="preco_atual">Preço Atual:</label>
+            <input type="number" id="preco_atual" name="preco_atual" required step="0.01">
+
+            <label for="preco_original">Preço Original:</label>
+            <input type="number" id="preco_original" name="preco_original" required step="0.01">
+
+            <label for="imagem_capa">Imagem de Capa (URL):</label>
+            <input type="url" id="imagem_capa" name="imagem_capa">
+
+            <label for="quantidade_estrelas">Quantidade de Estrelas (0 a 50):</label>
+            <input type="number" id="quantidade_estrelas" name="quantidade_estrelas" min="0" max="5" step="0.1">
+
+            <label for="quantidade_vendidos">Quantidade Vendida:</label>
+            <input type="number" id="quantidade_vendidos" name="quantidade_vendidos" min="0">
+        </fieldset>
+
+        <fieldset>
+            <legend>Detalhes e Especificações</legend>
+            <label for="variacoes">Variações (JSON):</label>
+            <textarea id="variacoes" name="variacoes" placeholder='{"cor": ["vermelho", "azul"], "tamanho": ["P", "M", "G"]}'>
+            </textarea>
+
+            <label for="quantidade_disponivel">Quantidade Disponível:</label>
+            <input type="number" id="quantidade_disponivel" name="quantidade_disponivel" min="1">
+
+            <label for="product_details">Detalhes do Produto (JSON):</label>
+            <textarea id="product_details" name="product_details"></textarea>
+
+            <label for="especificacoes_gerais">Especificações Gerais (JSON):</label>
+            <textarea id="especificacoes_gerais" name="especificacoes_gerais"></textarea>
+
+            <label for="detalhes_extras">Detalhes Extras (JSON):</label>
+            <textarea id="detalhes_extras" name="detalhes_extras"></textarea>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" required></textarea>
+
+            <label for="fotos_do_produto">Fotos do Produto (JSON, URLs):</label>
+            <textarea id="fotos_do_produto" name="fotos_do_produto"></textarea>
+
+            <label for="related_products">Produtos Relacionados (IDs, separados por vírgula):</label>
+            <input type="text" id="related_products" name="related_products">
+        </fieldset>
+
+        <button type="submit">Adicionar Produto</button>
+    </form>
+</body>
+</html>

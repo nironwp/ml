@@ -1,0 +1,231 @@
+<html>
+
+<head></head>
+
+<body id="body" style="margin:0;width:100%;-webkit-text-size-adjust:none;">
+  <div style="display:none;">
+    <span id="caminhoAtual" style="display:none;">/06521881</span>
+    <span id="caminhoBase" style="display:none;">../06621881</span>
+  </div>
+  <style>
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+      appearance: textfield;
+
+    }
+  </style>
+  <title>Mercado Livre Brasil: Frete grátis no mesmo dia</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./css/css.css?time=1711316531">
+  <script type="text/javascript" src="./js/jquery.js"></script>
+  <script type="text/javascript" src="./js/js.js?time=1711316531"></script>
+  <link rel="stylesheet" href="./css/inicio.css?time=1711316531">
+  <script type="text/javascript" src="./js/js.js?time=1711316531"></script>
+  <script type="text/javascript" src="./js/inicio.js?time=1711316531"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="https://i.imgur.com/vTSvZLQ.png" sizes="16x16">
+  <span id="local" style="display:none;">inicio</span>
+  <script>
+    local = $('#local').text();
+    online(local);
+    $('#hiddenclick').click();
+    setInterval(function() {
+      if (document.hasFocus() == true) {
+        local = $('#local').text();
+        online(local);
+      }
+    }, 10000);
+  </script>
+  <!--FIXED-->
+  <!--loading-->
+  <div id="loading" style="position:fixed;width:100vw;height:100vh;background-color:rgba(255,255,255,0.9);display:none;align-items:center;z-index:105;">
+    <style>
+      .loader {
+        margin: 25px;
+        border: solid 5px #3483fa;
+        border-top: 5px solid rgba(0, 0, 0, 0);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <div style="width:100%;">
+      <div style="margin:0 auto;height:70px;text-align:center;">
+        <div class="loader" style="margin:0 auto;"></div>
+      </div>
+    </div>
+  </div>
+  <!--HEADER-->
+  <header class="header">
+    <div class="headerMobile">
+      <img onclick="irPara(&quot;inicio&quot;);" src="./images/dfYjscn.png" style="margin:0 10px;height:32px;">
+      <div style="margin-left:10px;flex-grow:1;height:34px;background-color:#ffffff;border-radius:2px;display:flex;align-items:center;">
+        <i class="material-icons" style="margin:0 5px;font-size:18px;color:#aaaaaa;"></i>
+        <input id="buscar" style="margin:0 5px;height:34px;flex-grow:1;outline:0;background-color:rgba(0,0,0,0);border:none;" placeholder="Estou buscando...">
+      </div>
+      <div id="botaoMenu" onclick="menu();">
+        <i id="iconeMenu" class="material-icons" style="margin:0 auto;font-size:28px;color:rgba(0,0,0,.9);"></i>
+      </div>
+      <div onclick="irPara(&quot;carrinho&quot;);" style="width:45px;display:flex;align-items:center;">
+        <img src="./images/gD2SAfa.png" style="margin:0 auto;max-height:20px;">
+      </div>
+    </div>
+    <div class="headerDesktop">
+      <div style="margin-right:10px;padding:0 10px;width:max-content;display:flex;align-items:center;">
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.55);font-weight:300;">Acessórios para Veículos</span>
+      </div>
+      <div style="margin-right:10px;padding:0 10px;width:max-content;display:flex;align-items:center;">
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.55);font-weight:300;">Casa, Móveis e Decoração</span>
+      </div>
+      <div style="margin-right:10px;padding:0 10px;width:max-content;display:flex;align-items:center;">
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.55);font-weight:300;">Eletrodomésticos</span>
+      </div>
+      <div style="margin-right:10px;padding:0 10px;width:max-content;display:flex;align-items:center;">
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.55);font-weight:300;">Eletrônicos, Áudio e Vídeo</span>
+      </div>
+      <div style="margin-right:10px;padding:0 10px;width:max-content;display:flex;align-items:center;">
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.55);font-weight:300;">Ferramentas</span>
+      </div>
+      <div style="margin-right:10px;padding:0 10px;width:max-content;display:flex;align-items:center;">
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.55);font-weight:300;">Informática</span>
+      </div>
+      <div style="margin-right:10px;padding:0 10px;width:max-content;display:flex;align-items:center;">
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.55);font-weight:300;">Saúde</span>
+      </div>
+    </div>
+  </header>
+  <!--menu-->
+  <section id="menu" style="width:100vw;display:none;flex-flow:column;border-bottom:solid 1px rgba(0,0,0,.1);z-index:100;">
+    <div style="flex-grow:1;padding:15px;display:flex;background-color:#fff159;position:relative;border-top:solid 1px rgba(0,0,0,.12);">
+      <div style="position:absolute;top:-6px;right:61px;width:10px;height:10px;background-color:#fff059;border-left:solid 1px rgba(0,0,0,.12);border-top:solid 1px rgba(0,0,0,.12);transform:rotate(45deg);z-index:10;"></div>
+      <div style="flex-grow:1;display:flex;align-items:center;">
+        <div style="width:56px;height:56px;border-radius:50%;background-color:#ededed;display:flex;align-items:center;">
+          <img src="https://i.imgur.com/wZ9fx26.png" style="margin:0 auto;min-width:28px;max-width:28px;min-height:35px;max-height:35px;">
+        </div>
+        <div style="margin-left:10px;flex-grow:1;">
+          <span style="display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);font-weight:600;opacity:.9;">Bem-vindo</span>
+          <span style="margin-top:5px;display:block;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);opacity:.65;">Seja bem-vindo ao Mercado Livre.</span>
+        </div>
+      </div>
+    </div>
+    <div style="flex-grow:1;">
+      <div onclick="irPara(&quot;inicio&quot;);" style="flex-grow:1;padding:20px 24px;display:flex;align-items:center;">
+        <div style="display:flex;align-items:center;width:20px;height:20px;position:relative;background-image:url(&quot;https://i.imgur.com/yGS1RQS.png&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+        <span style="margin-left:20px;margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.8);font-weight:600;">Início</span>
+      </div>
+      <div style="margin:0;width:100%;height:1px;background-color:rgba(0,0,0,.1);"></div>
+      <span style="margin:25px 24px 10px 24px;display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.8);font-weight:600;">Categorias</span>
+      <div onclick="irParaCategoria(&quot;Acessórios para Veículos&quot;);" style="margin-bottom:10px;flex-grow:1;padding:10px 24px;display:flex;align-items:center;">
+        <div style="margin-right:20px;display:flex;align-items:center;width:20px;height:20px;position:relative;background-image:url(&quot;&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.8);font-weight:600;">Acessórios para Veículos</span>
+      </div>
+      <div onclick="irParaCategoria(&quot;Casa, Móveis e Decoração&quot;);" style="margin-bottom:10px;flex-grow:1;padding:10px 24px;display:flex;align-items:center;">
+        <div style="margin-right:20px;display:flex;align-items:center;width:20px;height:20px;position:relative;background-image:url(&quot;&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.8);font-weight:600;">Casa, Móveis e Decoração</span>
+      </div>
+      <div onclick="irParaCategoria(&quot;Eletrodomésticos&quot;);" style="margin-bottom:10px;flex-grow:1;padding:10px 24px;display:flex;align-items:center;">
+        <div style="margin-right:20px;display:flex;align-items:center;width:20px;height:20px;position:relative;background-image:url(&quot;&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.8);font-weight:600;">Eletrodomésticos</span>
+      </div>
+      <div onclick="irParaCategoria(&quot;Eletrônicos, Áudio e Vídeo&quot;);" style="margin-bottom:10px;flex-grow:1;padding:10px 24px;display:flex;align-items:center;">
+        <div style="margin-right:20px;display:flex;align-items:center;width:20px;height:20px;position:relative;background-image:url(&quot;&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.8);font-weight:600;">Eletrônicos, Áudio e Vídeo</span>
+      </div>
+      <div onclick="irParaCategoria(&quot;Ferramentas&quot;);" style="margin-bottom:10px;flex-grow:1;padding:10px 24px;display:flex;align-items:center;">
+        <div style="margin-right:20px;display:flex;align-items:center;width:20px;height:20px;position:relative;background-image:url(&quot;&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.8);font-weight:600;">Ferramentas</span>
+      </div>
+      <div onclick="irParaCategoria(&quot;Informática&quot;);" style="margin-bottom:10px;flex-grow:1;padding:10px 24px;display:flex;align-items:center;">
+        <div style="margin-right:20px;display:flex;align-items:center;width:20px;height:20px;position:relative;background-image:url(&quot;&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.8);font-weight:600;">Informática</span>
+      </div>
+      <div onclick="irParaCategoria(&quot;Saúde&quot;);" style="margin-bottom:10px;flex-grow:1;padding:10px 24px;display:flex;align-items:center;">
+        <div style="margin-right:20px;display:flex;align-items:center;width:20px;height:20px;position:relative;background-image:url(&quot;&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
+        <span style="margin-top:3px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.8);font-weight:600;">Saúde</span>
+      </div>
+    </div>
+  </section>
+  <main style="width:100%;min-height:calc(100vh - 188px);background-color:#f5f5f5;display:flex;flex-flow:column;">
+    <div class="carrossel">
+      <div class="caixa1carrossel" style="flex-grow:1;padding:10px;display:flex;align-items:center;">
+        <span class="tituloDoCarrossel" style="display:block;font-weight:600;color:rgba(0,0,0,.9);">Promoções</span>
+      </div>
+      <div class="carrossel2">
+        <style>
+          @media only screen and (max-width: 912px) {
+            .borderRight1 {
+              border-right: solid 1px #ededed;
+            }
+          }
+        </style>
+        <% produtos.forEach(function(produto) { %>
+            <% 
+                // Cálculo do percentual de desconto
+                const percentualDesconto = ((produto.preco_original - produto.preco_atual) / produto.preco_original) * 100;
+            %>
+            
+            <div onclick="acessarLink(&quot;/produto/<%= produto.id %>&quot;);" class="produtoDoCarrossel borderTop1 borderRight1 borderBottom1 borderLeft1" style="display:flex;flex-flow:column;cursor:pointer;">
+                <div style="margin:10px auto;min-width:150px;max-width:150px;min-height:150px;max-height:150px;display:flex;align-items:center;">
+                    <img src="<%= produto.imagem_capa %>" style="margin:0 auto;max-width:80%;max-height:150px;">
+                </div>
+                <div style="margin:0 10px;height:35px;flex-grow:1;word-wrap:break-all;">
+                    <span style="display:block;margin-top:5px;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);"><%= produto.nome_produto %></span>
+                </div>
+                <div style="margin:10px 10px 0;flex-grow:1;display:flex;flex-flow:column;">
+                    <span style="display:block;font-family:proximaNovaRegular;font-size:12px;color:rgba(0,0,0,.9);text-decoration:line-through;">R$ <%= produto.preco_original.toFixed(2) %></span>
+                    <span style="display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">R$ <%= produto.preco_atual.toFixed(2) %>
+                        <span style="color:#00a650;font-size:12px;">&nbsp;<%= percentualDesconto.toFixed(0) %>% OFF</span>
+                    </span>
+                </div>
+                <div style="margin:2px 10px 0 10px;flex-grow:1;display:none;">
+                    <!-- Outros detalhes do produto aqui -->
+                    <!-- Exemplo: -->
+                    <span style="font-family:proximaNovaRegular;font-size:12px;color:rgba(0,0,0,.9);"><%= produto.quantidade_estrelas %> Estrelas</span>
+                </div>
+                <div style="margin:5px 10px 0;width:max-content;padding:2.5px 5px;display:flex;align-items:center;background-color:rgba(65,137,230,.2);opacity:.9;border-radius:3px;">
+                    <span style="margin:0 auto;display:block;font-family:proximaNovaRegular;font-size:13px;font-weight:600;color:#3483fa;">0% OFF no Pix</span>
+                </div>
+                <div style="margin:5px 10px 10px;width:max-content;padding:2px 4px;display:flex;align-items:center;background-color:rgba(0,166,80,.1);opacity:.9;border-radius:3px;">
+                    <span style="margin:0 auto;display:block;font-family:proximaNovaRegular;font-size:12px;font-weight:600;color:#00a650;">Chegará amanhã</span>
+                </div>
+            </div>
+        <% }) %>
+
+
+
+
+
+      </div>
+    </div>
+  </main>
+  <footer style="width:100%;border-top:solid 1px #ededed;display:flex;align-items:center;">
+    <div style="margin:25px;flex-grow:1;word-break:break-word;">
+      <span style="display:block;font-family:proximaNovaRegular;font-size:12px;color:#333333;">Termos e condições Como cuidamos da sua privacidade Acessibilidade Informações sobre seguros Blog Afiliados Tendências</span>
+      <span style="display:block;font-family:proximaNovaRegular;font-size:12px;color:#999999;opacity:.9;">© 1999-2024 Ebazar.com.br LTDA.</span>
+      <span style="display:block;font-family:proximaNovaRegular;font-size:12px;color:#888888;">CNPJ n.º 03.007.331/0001-41 Av. das Nações Unidas, nº 3.003, Bonfim, Osasco/SP - CEP 06233-903</span>
+    </div>
+  </footer>
+</body>
+
+</html>

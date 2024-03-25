@@ -1,0 +1,20 @@
+{
+    "avaliations": [
+        {
+            "name": "Qualidade dos materiais",
+            "starts": 45
+        },
+        {
+            "name": "benefício",
+            "starts": 45
+        },
+        {
+            "name": "Capacidade",
+            "starts": 45
+        },
+        {
+            "name": "Fácil de limpar",
+            "starts": 45
+        }
+    ]
+}

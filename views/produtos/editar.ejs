@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Produto</title>
+</head>
+<body>
+    <h1>Editar Produto</h1>
+    <form action="/produtos/atualizar/<%= produto.id %>" method="POST">
+        <label for="nome_produto">Nome:</label>
+        <input type="text" id="nome_produto" name="nome_produto" value="<%= produto.nome_produto %>" required>
+        <label for="preco_atual">Preço Atual:</label>
+        <input type="number" id="preco_atual" name="preco_atual" value="<%= produto.preco_atual %>" required step="0.01">
+        <!-- Adicione mais campos conforme necessário -->
+        <button type="submit">Atualizar Produto</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!-- carrinho.ejs -->
+<% produtos.forEach(produto => { %>
+    <% const item = carrinho.produtos.find(item => parseInt(item.productId) === produto.id); %>
+    <% if (item) { %>
+      <div style='margin:10px;flex-grow:1;background-color:#ffffff;border-radius:6px;box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.15);'>
+        <div style='flex-grow:1;padding:15px;display:flex;align-items:center;border-bottom:solid 1px rgba(0,0,0,.1);'>
+            <span style='display:block;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:rgba(0,0,0,.8);'>Produtos &nbsp;&nbsp;</span>
+            <img src='https://i.imgur.com/2yE4X0O.png' style='max-height:18px;'>
+        </div>
+        <span id="fullidDoProdutoParaAlterarAQuantidade" style="display:none;"><%= produto.id%></span>
+        <div style='flex-grow:1;padding:10px 15px;height:max-content;display:flex;'>
+            <div style='margin-right:10px;width:48px;height:48px;position:relative;background-image:url("<%= produto.imagem_capa %>");background-size:contain;background-repeat:no-repeat;background-position:center;'></div>
+            <div style='flex-grow:1;display:flex;flex-flow:column;'>
+                <span style='display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'><%= produto.nome_produto %></span>            
+                <span onclick='removerProdutoDoCarrinho("<%= item.productId %>");' style='margin-top:10px;width:max-content;height:max-content;display:block;font-family:proximaNovaRegular;font-size:14px;font-weight:600;color:#3483fa;'>Excluir</span>
+                <div style='margin-top:10px;display:flex;flex-grow:1;'>
+                    <div onclick='buscarQuantidades("<%= produto.id %>");' style='margin:0 auto 0 0;width:70px;padding:0 5px 0 10px;height:30px;border:solid 1px rgba(0,0,0,.055);border-radius:4px;display:flex;align-items:center;'>
+                        <span style='font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);'><%= item.quantidade %> un.</span>
+                        <i class='material-icons' style='margin:0 0 0 auto;color:#3483fa;font-size:22px;transform:rotate(90deg);'>&#xe5cc;</i>
+                    </div>
+                    <div style='margin:0 0 0 auto;width:max-content;text-align:right;'>
+                        <span style='margin:0 0 0 auto;display:block;font-family:proximaNovaRegular;font-size:14px;color:#00a650;'>
+                           -<%= ((produto.preco_original - produto.preco_atual) / produto.preco_original * 100).toFixed(0) %>% <span style='color:rgba(0,0,0,.55);text-decoration:line-through;'>R$ <%= produto.preco_original.toFixed(2) %></span>
+                        </span>
+                        <span style='margin:0 0 0 auto;display:block;font-family:proximaNovaRegular;font-size:18px;color:rgba(0,0,0,.9);'>R$ <%= produto.preco_atual.toFixed(2) %></span>
+                    </div>
+                </div>
+            </div>
+            <span id='quantidadeTotal<%= item.productId %>' style='display:none;'><%= item.quantidade %></span>
+        </div>
+      </div>
+    <% } %>
+  <% }); %>
+  
+  <div style='margin-top:50px;flex-grow:1;padding:10px;background-color:#ffffff;border-radius:6px 6px 0 0;box-shadow: 0px -5px 15px 2px rgba(0, 0, 0, 0.24);'>
+      <div style='width:100%;display:flex;align-items:center;'>
+        <span style='margin:0 auto 0 0;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Produtos (
+            <%= carrinho.produtos.length %>
+          )</span>
+          
+          <% let total = 0; %>
+          <% carrinho.produtos.forEach(item => { %>
+            <% const produto = produtos.find(produto => produto.id === parseInt(item.productId)); %>
+            <% if (produto) { %>
+              <% total += produto.preco_atual * item.quantidade; %>
+            <% } %>
+          <% }); %>
+          <span style='margin:0 0 0 auto;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>R$ <%= total.toFixed(2) %></span>
+      </div>
+      <div style='margin-top:5px;width:100%;display:flex;align-items:center;'>
+          <span style='margin:0 auto 0 0;font-family:proximaNovaRegular;font-size:14px;color:rgba(0,0,0,.9);'>Frete</span>
+          <span style='margin:0 0 0 auto;font-family:proximaNovaRegular;font-size:14px;color:#00a650;'>Grátis</span>
+      </div>
+      <div style='margin-top:10px;width:100%;display:flex;align-items:center;'>
+          <span style='margin:0 auto 0 0;font-family:proximaNovaRegular;font-size:16px;font-weight:600;color:rgba(0,0,0,.9);'>Total
+            <span style='margin:0 0 0 auto;font-family:proximaNovaRegular;font-size:16px;font-weight:600;color:rgba(0,0,0,.9);'>R$ <%= total.toFixed(2) %></span>
+        </div>
+        <div onclick='irPara("login");' style='margin-top:25px;flex-grow:1;height:48px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;cursor:pointer;'>
+            <span style='margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;'>Continuar a compra</span>
+        </div>
+    </div>
+      

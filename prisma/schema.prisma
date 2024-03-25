@@ -1,0 +1,59 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model ModelAvaliations {
+  id                  Int              @id @default(autoincrement())
+  total_avaliations   Int
+  stars               Int
+  extra_details_string String
+  user_avaliations    UserAvaliations[]
+  produtoId           Int @unique
+  tamanho_barra_5 Float @default(100)
+  tamanho_barra_4 Float @default(100)
+  tamanho_barra_3 Float @default(100)
+  tamanho_barra_2 Float @default(100)
+  tamanho_barra_1 Float @default(100)
+  produto             Produto           @relation(fields: [produtoId], references: [id])
+
+  @@map("model_avaliations")
+}
+
+model UserAvaliations {
+  id         Int      @id @default(autoincrement())
+  likes      Int
+  posterName String
+  images     String
+  commentDate DateTime
+  comment String @default("Amei")
+  modelAvaliationId Int?
+  modelAvaliations  ModelAvaliations? @relation(fields: [modelAvaliationId], references: [id])
+
+  @@map("user_avaliations")
+}
+
+model Produto {
+  id                   Int              @id @default(autoincrement())
+  preco_original       Float
+  slider_images        String
+  preco_atual          Float
+  imagem_capa          String?
+  nome_produto         String
+  quantidade_estrelas  Int
+  quantidade_vendidos  Int
+  variacoes            String
+  quantidade_disponivel Int
+  product_details      String
+  especificacoes_gerais String
+  detalhes_extras      String
+  fotos_do_produto     String
+  questions            String?
+  descricao            String
+  related_products     String @default("")
+  modelAvaliations     ModelAvaliations?
+}

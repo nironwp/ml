@@ -1,0 +1,4 @@
+<% for(let parcela = 1; parcela <= 12; parcela++) { %>
+    <% const valorParcela = (totalValor / parcela).toFixed(2); %>
+    <option style='color:COLORTEXT;' value='<%= parcela %>x de R$ <%= valorParcela %> sem juros'><%= parcela %>x de R$ <%= valorParcela %> sem juros</option>
+<% } %>
