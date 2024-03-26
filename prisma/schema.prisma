@@ -7,12 +7,11 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
 model ModelAvaliations {
   id                  Int              @id @default(autoincrement())
   total_avaliations   Int
   stars               Int
-  extra_details_string String
+  extra_details_string String  @db.LongText
   user_avaliations    UserAvaliations[]
   produtoId           Int @unique
   tamanho_barra_5 Float @default(100)
@@ -28,10 +27,10 @@ model ModelAvaliations {
 model UserAvaliations {
   id         Int      @id @default(autoincrement())
   likes      Int
-  posterName String
-  images     String
+  posterName String @db.LongText
+  images     String @db.LongText
   commentDate DateTime
-  comment String @default("Amei")
+  comment String @default("Amei") @db.LongText
   modelAvaliationId Int?
   modelAvaliations  ModelAvaliations? @relation(fields: [modelAvaliationId], references: [id])
 
@@ -41,20 +40,20 @@ model UserAvaliations {
 model Produto {
   id                   Int              @id @default(autoincrement())
   preco_original       Float
-  slider_images        String
+  slider_images        String @db.LongText
   preco_atual          Float
-  imagem_capa          String?
-  nome_produto         String
+  imagem_capa          String? @db.LongText
+  nome_produto         String @db.LongText
   quantidade_estrelas  Int
   quantidade_vendidos  Int
-  variacoes            String
+  variacoes            String @db.LongText
   quantidade_disponivel Int
-  product_details      String
-  especificacoes_gerais String
-  detalhes_extras      String
-  fotos_do_produto     String
-  questions            String?
-  descricao            String
-  related_products     String @default("")
+  product_details      String @db.LongText
+  especificacoes_gerais String @db.LongText
+  detalhes_extras      String @db.LongText
+  fotos_do_produto     String @db.LongText
+  questions            String? @db.LongText
+  descricao            String @db.LongText
+  related_products     String @default("") @db.LongText
   modelAvaliations     ModelAvaliations?
 }
