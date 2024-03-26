@@ -33,7 +33,7 @@
     .carrossel{margin:20px 10px;border-radius:6px;flex-grow:1;background-color:#ffffff;text-align:left;display:flex;flex-flow:column;}
         .caixa1carrossel{border-bottom:solid 1px #ededed;}
     .carrossel2{margin:0;flex-grow:1;display:flex;flex-wrap:wrap;}
-    .produtoDoCarrossel{min-width:calc(50% - 0.5px);max-width:calc(50% - 0.5px);}
+    .produtoDoCarrossel{max-width:calc(50% - 0.5px);}
     .tituloDoCarrossel{font-size:18px;font-family:proximaNovaRegular;}
 
     footer{width:100%;display:flex;}

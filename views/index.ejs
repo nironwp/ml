@@ -46,37 +46,6 @@
       }
     }, 10000);
   </script>
-  <!--FIXED-->
-  <!--loading-->
-  <div id="loading" style="position:fixed;width:100vw;height:100vh;background-color:rgba(255,255,255,0.9);display:none;align-items:center;z-index:105;">
-    <style>
-      .loader {
-        margin: 25px;
-        border: solid 5px #3483fa;
-        border-top: 5px solid rgba(0, 0, 0, 0);
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: spin 1s linear infinite;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-    <div style="width:100%;">
-      <div style="margin:0 auto;height:70px;text-align:center;">
-        <div class="loader" style="margin:0 auto;"></div>
-      </div>
-    </div>
-  </div>
-  <!--HEADER-->
   <header class="header">
     <div class="headerMobile">
       <img onclick="irPara(&quot;inicio&quot;);" src="./images/dfYjscn.png" style="margin:0 10px;height:32px;">
@@ -178,7 +147,20 @@
               border-right: solid 1px #ededed;
             }
           }
+          @media only screen and (max-width: 912px) {
+    .carrossel2 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around; /* Isso vai distribuir o espaço entre os itens de forma uniforme */
+    }
+
+    .produtoDoCarrossel {
+        flex-basis: calc(50% - 10px); /* Isso faz cada produto ocupar menos de 50% do container, permitindo 2 itens por linha. O -10px é para ajustar o espaço entre os produtos */
+        margin-bottom: 20px; /* Espaço entre linhas de produtos */
+    }
+}
         </style>
+        
         <% produtos.forEach(function(produto) { %>
             <% 
                 // Cálculo do percentual de desconto
