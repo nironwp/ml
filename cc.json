@@ -1,0 +1,44 @@
+{
+    "general_especifications": {
+        "Características gerais": [
+            {
+                "name": "Marca",
+                "val": "Samsung"
+            },
+            {
+                "name": "Linha",
+                "val": "UHD 4K 2023"
+            },
+            {
+                "name": "Modelo",
+                "val": "43CU7700"
+            }
+        ],
+        "Tela": [
+            {
+                "name": "Tipo de Tela",
+                "val": "Led"
+            },
+            {
+                "name": "Tamanho da tela",
+                "val": "43 --||aspasDupla||--"
+            },
+            {
+                "name": "Tipo de resolução",
+                "val": "4K"
+            }
+        ],
+        "Especificações": [
+            {
+                "name": "É smart",
+                "val": "Sim"
+            }
+        ],
+        "Especificações 2": [
+            {
+                "name": "É smart",
+                "val": "Sim"
+            }
+        ]
+    }
+}

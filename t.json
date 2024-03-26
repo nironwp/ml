@@ -1,20 +1,356 @@
 {
-    "avaliations": [
+    "general_especifications": {
+      "Características Gerais": [
         {
-            "name": "Qualidade dos materiais",
-            "starts": 45
+          "name": "Marca",
+          "val": "Motorola"
         },
         {
-            "name": "benefício",
-            "starts": 45
+          "name": "Linha",
+          "val": "Moto G"
         },
         {
-            "name": "Capacidade",
-            "starts": 45
+          "name": "Modelo",
+          "val": "G14"
         },
         {
-            "name": "Fácil de limpar",
-            "starts": 45
+          "name": "Modelo detalhado",
+          "val": "Moto g14 128gb Grafite"
+        },
+        {
+          "name": "Cor",
+          "val": "Grafite"
         }
-    ]
+      ],
+      "Sistema operacional": [
+        {
+          "name": "Nome",
+          "val": "Android"
+        },
+        {
+          "name": "Versão original",
+          "val": "13"
+        }
+      ],
+      "Conectividade": [
+        {
+          "name": "Rede móvel",
+          "val": "4G/LTE"
+        },
+        {
+          "name": "Tipo de conector de carregamento",
+          "val": "USB-C"
+        },
+        {
+          "name": "Com conector USB",
+          "val": "Sim"
+        },
+        {
+          "name": "Com conector jack 3.5 mm",
+          "val": "Não"
+        },
+        {
+          "name": "Com Wi-Fi",
+          "val": "Sim"
+        },
+        {
+          "name": "Com GPS",
+          "val": "Sim"
+        },
+        {
+          "name": "Com Bluetooth",
+          "val": "Sim"
+        },
+        {
+          "name": "Com NFC",
+          "val": "Não"
+        },
+        {
+          "name": "Com mini-HDMI",
+          "val": "Não"
+        },
+        {
+          "name": "Com rádio",
+          "val": "Sim"
+        },
+        {
+          "name": "Com sintonizador de TV",
+          "val": "Não"
+        }
+      ],
+      "Câmera": [
+        {
+          "name": "Resolução da câmera traseira principal",
+          "val": "50 Mpx"
+        },
+        {
+          "name": "Resolução da câmera frontal principal",
+          "val": "8 Mpx"
+        },
+        {
+          "name": "Características principais das câmeras",
+          "val": "Modo noite"
+        },
+        {
+          "name": "Resolução das câmeras traseiras",
+          "val": "50 Mpx/2 Mpx"
+        },
+        {
+          "name": "Abertura do diafragma da câmera traseira",
+          "val": "f 1.8/f 2.4"
+        },
+        {
+          "name": "Abertura do diafragma da câmera frontal",
+          "val": "f 2"
+        },
+        {
+          "name": "Quantidade de câmeras traseiras",
+          "val": "2"
+        },
+        {
+          "name": "Quantidade de câmeras frontais",
+          "val": "1"
+        },
+        {
+          "name": "Zoom digital",
+          "val": "8x"
+        },
+        {
+          "name": "Resolução de vídeo da câmera frontal",
+          "val": "1920 px x 1080 px"
+        },
+        {
+          "name": "Com câmera",
+          "val": "Sim"
+        },
+        {
+          "name": "Com flash na câmara frontal",
+          "val": "Não"
+        },
+        {
+          "name": "Com reconhecimento de mão",
+          "val": "Não"
+        },
+        {
+          "name": "Resolução da câmera grande-angular",
+          "val": "2 Mpx"
+        }
+      ],
+      "Design e resistência": [
+        {
+          "name": "Com teclado QWERTY físico",
+          "val": "Não"
+        },
+        {
+          "name": "É resistente a salpicos",
+          "val": "Sim"
+        },
+        {
+          "name": "É resistente à água",
+          "val": "Sim"
+        },
+        {
+          "name": "É à prova d'água",
+          "val": "Não"
+        },
+        {
+          "name": "É resistente ao pó",
+          "val": "Sim"
+        }
+    ],
+    "Sensores": [
+      {
+        "name": "Com acelerômetro",
+        "val": "Sim"
+      },
+      {
+        "name": "Com sensor de proximidade",
+        "val": "Sim"
+      },
+      {
+        "name": "Com giroscópio",
+        "val": "Sim"
+      },
+      {
+        "name": "Com bússola",
+        "val": "Não"
+      },
+      {
+        "name": "Com barômetro",
+        "val": "Não"
+      },
+      {
+        "name": "Com sensor de frequência cardíaca",
+        "val": "Não"
+      }
+    ],
+    "Cartão SIM": [
+      {
+        "name": "É Dual SIM",
+        "val": "Sim"
+      },
+      {
+        "name": "Quantidade de ranhuras para cartão SIM",
+        "val": "2"
+      },
+      {
+        "name": "Tamanhos de cartão SIM compatíveis",
+        "val": "Nano-SIM"
+      },
+      {
+        "name": "Com eSIM",
+        "val": "Não"
+      }
+    ],
+    "Memória": [
+      {
+        "name": "Memória interna",
+        "val": "128 GB"
+      },
+      {
+        "name": "Memória RAM",
+        "val": "4 GB"
+      },
+      {
+        "name": "Tipos de cartão de memória",
+        "val": "Micro-SD"
+      },
+      {
+        "name": "Capacidade máxima do cartão de memória",
+        "val": "1 TB"
+      },
+      {
+        "name": "Com ranhura para cartão de memória",
+        "val": "Sim"
+      }
+    ],
+    "Processador": [
+      {
+        "name": "Modelo do processador",
+        "val": "Unisoc T616"
+      },
+      {
+        "name": "Velocidade do processador",
+        "val": "2 GHz"
+      },
+      {
+        "name": "Modelo de GPU",
+        "val": "Mali-G57"
+      },
+      {
+        "name": "Quantidade de núcleos do processador",
+        "val": "8"
+      },
+      {
+        "name": "Velocidade do GPU",
+        "val": "750 GHz"
+      }
+    ],
+    "Especificações": [
+      {
+        "name": "Homologação Anatel Nº",
+        "val": "093622300330"
+      },
+      {
+        "name": "Mês de lançamento",
+        "val": "Setembro"
+      },
+      {
+        "name": "Ano de lançamento",
+        "val": "2023"
+      }
+    ],
+    "Tela": [
+      {
+        "name": "Tamanho da tela",
+        "val": "6.5 \""
+      },
+      {
+        "name": "Tipo de resolução da tela",
+        "val": "Full HD+"
+      },
+      {
+        "name": "Resolução da tela",
+        "val": "1080 px x 2400 px"
+      },
+      {
+        "name": "Tecnologia da tela",
+        "val": "IPS"
+      },
+      {
+        "name": "Pixels por polegada da tela",
+        "val": "405 ppi"
+      },
+      {
+        "name": "Proporção da tela",
+        "val": "20:9"
+      },
+      {
+        "name": "Com tela tátil",
+        "val": "Não"
+      },
+      {
+        "name": "Com tela dobrável",
+        "val": "Não"
+      },
+      {
+        "name": "Com tela secundária tátil",
+        "val": "Não"
+      }
+    ],
+    "Bateria": [
+      {
+        "name": "Capacidade da bateria",
+        "val": "5000 mAh"
+      },
+      {
+        "name": "Com carregamento rápido",
+        "val": "Sim"
+      },
+      {
+        "name": "Com carregamento sem fio",
+        "val": "Não"
+      },
+      {
+        "name": "Com bateria removível",
+        "val": "Não"
+      }
+    ],
+    "Segurança": [
+      {
+        "name": "Com leitor de impressão digital",
+        "val": "Sim"
+      },
+      {
+        "name": "Com reconhecimento facial",
+        "val": "Sim"
+      },
+      {
+        "name": "Com reconhecimento de íris",
+        "val": "Não"
+      },
+      {
+        "name": "Com botão SOS",
+        "val":        "Não"
+    }
+  ],
+  "Peso e dimensões": [
+    {
+      "name": "Peso",
+      "val": "177.2 g"
+    },
+    {
+      "name": "Altura x Largura x Profundidade",
+      "val": "177.2 mm x 73.82 mm x 7.99 mm"
+    }
+  ],
+  "Outros": [
+    {
+      "name": "Inclui lápis",
+      "val": "Não"
+    }
+  ]
 }
+}
+
+  
