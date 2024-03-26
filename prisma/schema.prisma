@@ -54,6 +54,6 @@ model Produto {
   fotos_do_produto     String @db.LongText
   questions            String? @db.LongText
   descricao            String @db.LongText
-  related_products     String @default("") @db.LongText
+  related_products     String @default("") 
   modelAvaliations     ModelAvaliations?
 }
