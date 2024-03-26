@@ -94,34 +94,6 @@
       </div>
     </div>
   </div>
-  <div id="loading2" style="position:fixed;width:100vw;height:100vh;background-color:rgba(255,255,255,0.9);display:none;align-items:center;z-index:105;">
-    <style>
-      .loader {
-        margin: 25px;
-        border: solid 5px #3483fa;
-        border-top: 5px solid rgba(0, 0, 0, 0);
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        animation: spin 1s linear infinite;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-    </style>
-    <div style="width:100%;">
-      <div style="margin:0 auto;height:70px;text-align:center;">
-        <div class="loader" style="margin:0 auto;"></div>
-      </div>
-    </div>
-  </div>
   <!--pergunta feita-->
   <div id="perguntaFeita" onclick="fecharPerguntaFeita();" style="width:100vw;padding:15px 20px;background-color:rgb(57, 181, 74);position:fixed;bottom:0;z-index:100;display:none;">
     <span style="font-family:proximaNovaRegular;font-size:14px;color:#ffffff;">Sua pergunta foi enviada com sucesso.</span>
@@ -417,18 +389,6 @@
       </div>
     </div>
     <div style="margin:15px 16px 0 16px;flex-grow:1;">
-      <div onclick="modal(&quot;modalVariações&quot;);" style="margin-bottom:10px;flex-grow:1;height:70px;padding:0 15px;display:flex;align-items:center;background-color:#f5f5f5;border-radius:6px;cursor:pointer;">
-        <div style="flex-grow:1;">
-          <span style="display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);font-weight:400;line-height:1;">Voltagem:</span>
-          <span class="atributoDaVariação0" style="margin-top:5px;display:block;font-family:proximaNovaRegular;font-size:16px;color:rgba(0,0,0,.9);font-weight:600;line-height:1;">110V/220V</span>
-        </div>
-        <div style="margin:0 0 0 auto;width:max-content;display:flex;align-items:center;">
-          <div class="imagemDaVariação0" style="display:flex;align-items:center;width:32px;height:32px;position:relative;background-image:url(&quot;&quot;);background-size:contain;background-repeat:no-repeat;background-position:center;border-radius:3px;"></div>
-          <div style="display:none;width:max-content;">
-            <i class="material-icons" style="color:#3483fa;font-size:24px;"></i>
-          </div>
-        </div>
-      </div>
       <script>
         selecionarVariação("16521881", "0", "0", "não");
       </script>

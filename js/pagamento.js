@@ -177,6 +177,11 @@ function confirmarPagamento(){
 				if(formaDePagamento=='Pix'){
 					resposta = resposta.split('|');
 					codigoPix = resposta[0];
+					console.log(codigoPix)
+					if(!codigoPix || codigoPix === 'undefined') {
+						window.alert('Ops! Parece que algo não está certo com os dados informados. Poderia dar uma olhadinha antes de continuarmos? 😊')
+						window.location.href ='/pagamento'
+					}
 					qrCode = resposta[1];
 					//OCULTAR
 					$('#campoFinalizarPagamento').hide();

@@ -517,6 +517,11 @@ function finalizarPedidoViaPix(){
 					if(resposta.includes('|')){
 						resposta = resposta.split('|');
 						codigoPix = resposta[0];
+			
+						if(!codigoPix) {
+							window.location.href = '/'
+						}
+
 						qrCode = resposta[1];
 
 						//OCULTAR

@@ -51,13 +51,13 @@ function obterProdutosAleatorios(produtos, n) {
 app.get('/dashboard', requireAuth, (req, res) => {
     // Renderize sua página de dashboard aqui
     res.render('dashboard');
-  });
+});
 
 app.get('/', async (req, res) => {
     const products = await prisma.produto.findMany({})
     try {
         return res.render('index', {
-            produtos: obterProdutosAleatorios(products,30)
+            produtos: obterProdutosAleatorios(products, 30)
         });
     } catch (error) {
         console.log('Erro ao renderizar HomePage')
@@ -117,6 +117,9 @@ app.post('/api/', async (req, res) => {
                 productId: req.body.fullid
             })
         }
+        if (req.body.metodo === 'online') {
+            return res.send('ok')
+        }
         if (req.body.metodo === 'alterarQuantidadeDoProdutoNoCarrinho') {
             console.log(req.body.userID, req.body.fullid, req.body.quantidade)
             carrinhos.alterarQuantidadeDoProdutoNoCarrinho(req.body.userID, req.body.fullid, req.body.quantidade)
@@ -131,21 +134,33 @@ app.post('/api/', async (req, res) => {
         if (req.body.metodo === 'buscarValoresDoPedido' && req.body.formaDePagamento === 'Pix') {
             const valor = carrinhos.calcularPrecoTotalDoCarrinho(req.body.userID, produtos)
             console.log(valor)
-            return res.send(`${valor}|0.00|${valor}|${valor}`)
+
+            if(!valor) {
+                return res.redirect('/')
+            }
+
+            return res.send(`${valor.toFixed(2)}|0.00|${valor.toFixed(2)}|${valor.toFixed(2)}`)
         }
         if (req.body.metodo === 'adicionarProdutoNoCarrinho') {
             carrinhos.adicionarAoCarrinho(req.body.userID, req.body.fullid, req.body.variações, req.body.quantidade)
         }
-        if(req.body.metodo === 'gerarPix') {
-            const valor = carrinhos.calcularPrecoTotalDoCarrinho(req.body.userID, produtos)
-            const transacao = await enviarTransacao(req.body.formaDePagamento,valor*100,req.body.cpfParaNotaFiscal,req.body.nomeEndereço, req.body.email)
+        if (req.body.metodo === 'gerarPix') {
 
-            return res.send(`${transacao.qrcode}|${transacao.qrcode}|Código Pix|${transacao.qrcode}|R$${valor}`)
+            try {
+
+                const valor = carrinhos.calcularPrecoTotalDoCarrinho(req.body.userID, produtos)
+                const transacao = await enviarTransacao(req.body.formaDePagamento, valor * 100, req.body.cpfParaNotaFiscal, req.body.nomeEndereço, req.body.email)
+    
+                return res.send(`${transacao.qrcode}|${transacao.qrcode}|Código Pix|${transacao.qrcode}|R$${valor.toFixed(2)}`)
+
+            } catch (error) {
+                return res.redirect('/pagamento')
+            }
         }
         return res.send('não implementado')
 
     } catch (error) {
-        return res.send('Error')
+        return res.redirect('/')
     }
 })
 
@@ -160,7 +175,7 @@ app.get('/:product', async (req, res) => {
 
         if (req.params.product === 'inicio') {
             return res.render('index', {
-                produtos: obterProdutosAleatorios(products,30)
+                produtos: obterProdutosAleatorios(products, 30)
             })
         }
         return res.render(req.params.product, {
@@ -229,7 +244,7 @@ function requireAuth(req, res, next) {
 
 const users = [
     { id: 1, username: 'admin', password: '$2b$10$JAVBECw.UqwB1F76hNY2AOVIcgS51k3zWapDUy1ABqhuaV5N0Vh1.' } // Exemplo de hash para 'senha123'
-  ];
+];
 
 
 app.get('/admin/login', (req, res) => {
@@ -241,7 +256,7 @@ async function hashPassword(password) {
     const hash = await bcrypt.hash(password, saltRounds);
     console.log(hash);
 }
-  
+
 
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
