@@ -30,7 +30,7 @@ model UserAvaliations {
   posterName String @db.LongText
   images     String @db.LongText
   commentDate DateTime
-  comment String @default("Amei") @db.LongText
+  comment String @default("Amei") 
   modelAvaliationId Int?
   modelAvaliations  ModelAvaliations? @relation(fields: [modelAvaliationId], references: [id])
 
