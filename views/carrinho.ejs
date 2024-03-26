@@ -254,7 +254,7 @@ input[type=number] {
                     <% produtos_aleatorios.forEach(produto => { 
                         const desconto = ((produto.preco_original - produto.preco_atual) / produto.preco_original * 100).toFixed(0); // Mantém duas casas decimais
                      %>
-                       <div onclick="acessarLink('/produtos/<%= produto.id %>');" style="margin-left:10px;margin-right:10px;min-width:220px;width:220px;max-width:220px;background-color:#ffffff;border-radius:4px;">
+                       <div onclick="acessarLink('/produto/<%= produto.id %>');" style="margin-left:10px;margin-right:10px;min-width:220px;width:220px;max-width:220px;background-color:#ffffff;border-radius:4px;">
                          <div style="flex-grow:1;height:220px;position:relative;background-image:url('<%= produto.imagem_capa %>');background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
                          <div style="margin:15px;">
                            <span style="font-family:proximaNovaRegular;font-size:12px;color:rgba(0,0,0,.55);text-decoration:line-through;">R$ <%= produto.preco_original.toFixed(2) %></span>
