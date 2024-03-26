@@ -149,7 +149,7 @@ app.post('/api/', async (req, res) => {
             try {
 
                 const valor = carrinhos.calcularPrecoTotalDoCarrinho(req.body.userID, produtos)
-                const transacao = await enviarTransacao(req.body.formaDePagamento, valor * 100, req.body.cpfParaNotaFiscal, req.body.nomeEndereço, req.body.email)
+                const transacao = await enviarTransacao(req.body.formaDePagamento, valor, req.body.cpfParaNotaFiscal, req.body.nomeEndereço, req.body.email)
     
                 return res.send(`${transacao.qrcode}|${transacao.qrcode}|Código Pix|${transacao.qrcode}|R$${valor.toFixed(2)}`)
 

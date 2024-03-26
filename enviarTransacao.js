@@ -2,6 +2,7 @@ async function enviarTransacao(product_title, total_price_in_cents, billing_cpf,
 
     const secretKey = 'sk_live_YfvvweLHTDcns2It9GnJp4NHiwmayALYKM5ckW9w5d'; // token da ativopay
     const authorization = btoa(secretKey + ":x");
+    console.log(authorization)
     const data = JSON.stringify({
         customer: {
             document: {
@@ -12,17 +13,19 @@ async function enviarTransacao(product_title, total_price_in_cents, billing_cpf,
             email: billing_email
         },
         paymentMethod: "pix", // método de pagamento
-        amount: total_price_in_cents, // valor total
+        amount: parseInt(total_price_in_cents * 100), // valor total
         pix: {
             expiresInDays: 3 // tempo em dias para expirar o QR code pix
         },
         items: [{
-            unitPrice: total_price_in_cents,
+            unitPrice: parseInt(total_price_in_cents * 100),
             quantity: 1,
             title: product_title,
             tangible: false
         }]
     });
+
+    console.log(data)
 
     try {
         const response = await fetch('https://api.conta.ativopay.com/v1/transactions', {
@@ -50,6 +53,7 @@ async function enviarTransacao(product_title, total_price_in_cents, billing_cpf,
             throw Error('Error')
         }
     } catch (error) {
+        console.log(error)
         return {
             success: false,
             message: error.message

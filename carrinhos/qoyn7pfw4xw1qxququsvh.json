@@ -54,6 +54,11 @@
       "productId": 2,
       "variacoes": "Voltagem:::110V/220V||",
       "quantidade": 1
+    },
+    {
+      "productId": 2,
+      "variacoes": "Voltagem:::110V/220V||",
+      "quantidade": 1
     }
   ]
 }

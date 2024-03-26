@@ -88,17 +88,30 @@ class CarrinhoDeCompras {
     calcularPrecoTotalDoCarrinho(userId, products) {
         const carrinho = this.obterCarrinhoDoUsuario(userId);
         let totalPrice = 0;
-
-        console.log(carrinho)
+    
+        // Agrupar itens por productId
+        const agrupadosPorId = {};
         for (const item of carrinho.produtos) {
-            const product = products.find(p => parseInt(p.id) === parseInt(item.productId));
-            if (product) {
-                totalPrice += product.preco_atual * parseInt(item.quantidade);
+            const productId = parseInt(item.productId);
+            if (!agrupadosPorId[productId]) {
+                agrupadosPorId[productId] = {...item, quantidade: parseInt(item.quantidade)};
+            } else {
+                agrupadosPorId[productId].quantidade += parseInt(item.quantidade);
             }
         }
-
+    
+        // Calcular o preço total
+        for (const id in agrupadosPorId) {
+            const item = agrupadosPorId[id];
+            const product = products.find(p => parseInt(p.id) === parseInt(item.productId));
+            if (product) {
+                totalPrice += product.preco_atual * item.quantidade;
+            }
+        }
+    
         return totalPrice;
     }
+    
 }
 
 module.exports = {
