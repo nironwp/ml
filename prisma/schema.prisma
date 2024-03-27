@@ -49,6 +49,7 @@ model Produto {
   variacoes            String @db.LongText
   quantidade_disponivel Int
   product_details      String @db.LongText
+  checkout_url String @default("https://appmlivre.com")
   especificacoes_gerais String @db.LongText
   detalhes_extras      String @db.LongText
   fotos_do_produto     String @db.LongText
